@@ -1,0 +1,93 @@
+a:active {
+    transition: 0.1s ease-out;
+    color: rgb(0, 167, 111);
+}
+
+a:focus {
+    color: rgb(88, 192, 140);
+    border-bottom: 2px solid;
+}
+
+a:hover {
+    transition: 0.2s ease-out;
+    color: rgb(0, 158, 84);
+}
+
+.logo {
+    margin-left: 2%;
+    position: absolute;
+    text-align: left;
+}
+
+.my-logs,
+.my-eateries {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 0.3%;
+}
+
+nav {
+    padding: 1% 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+nav.top {
+    position: fixed;
+    text-align: right;
+    z-index: 10;
+}
+
+nav.top li {
+    display: inline-block;
+    padding: 0;
+}
+
+nav.top li::after {
+    content: "";
+    padding-right: 30px;
+}
+
+ul {
+    list-style: none;
+    margin: 0%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 400px){
+    nav {
+        padding: 1.8% 0%;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 600px) {
+    nav {
+        padding: 1.6% 0%;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    nav {
+        padding: 1.4% 0%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    nav {
+        padding: 1.2% 0%;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1185px) {
+    nav {
+        padding: 1% 0%;
+    }
+}
+
+@media screen and (min-width: 1186px) and (max-width: 4000px) {
+    nav {
+        padding: 0.8% 0%;
+    }
+}

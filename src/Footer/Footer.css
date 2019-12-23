@@ -1,0 +1,23 @@
+footer {
+    font-size: 0.8em;
+    margin-top: 5%;
+    text-align: center;
+    width: 100%;  
+}
+
+.app-footer {
+    font-style: italic;
+    padding: 1% 0% 1% 0%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 400px){
+    footer {
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 600px) {
+    footer {
+        font-size: 0.8em;
+    }
+}

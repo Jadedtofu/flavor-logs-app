@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-// import { Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import Nav from './Nav/Nav';
+import Footer from './Footer/Footer';
+import Landing from './Landing/Landing';
 import ApiContext from './ApiContext';
 // import config from './config';
 import './App.css';
+import MyLogs from './MyLogs/MyLogs';
+import MyEateries from './MyEateries/MyEateries';
 
 class App extends Component {
   state = {
@@ -24,9 +29,24 @@ class App extends Component {
 
     return(    
       <ApiContext.Provider value={value}>
-        <main className="App">
-          Main
-        </main>
+        <Nav />
+
+        <Route
+          exact path='/'
+          component={Landing}
+        />
+
+        <Route
+          path='/myLogs'
+          component={MyLogs}
+        />
+
+        <Route
+          path='/myEateries'
+          component={MyEateries}
+        />
+
+        <Footer />
       </ApiContext.Provider>
     );
   }
