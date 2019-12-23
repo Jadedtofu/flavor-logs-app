@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './MyLogs.css';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import ApiContext from '../ApiContext';
 
 class MyLogs extends Component {
@@ -12,14 +12,14 @@ class MyLogs extends Component {
                 </header>
 
                 <section>
-                    <button>Add a log</button>
+                    <button><Link to='/addLog'>Add a log</Link></button>
                 </section>
 
                 <section>
                 <header>
                     <h2>Best pho in town
-                        <button>Edit</button>
-                        <button>Delete</button>
+                        <button className="edit-log-btn"><i className="fas fa-pencil-alt"></i></button>
+                        <button className="delete-log-btn"><i className="fas fa-trash-alt"></i></button>
                     </h2>
                     <h3>Pho Mignon</h3>
                 </header>
@@ -34,8 +34,8 @@ class MyLogs extends Component {
                 <section>
                 <header>
                     <h2>Softest Bread
-                        <button>Edit</button>
-                        <button>Delete</button>
+                        <button className="edit-log-btn"><i className="fas fa-pencil-alt"></i></button>
+                        <button className="delete-log-btn"><i className="fas fa-trash-alt"></i></button>
                     </h2>
                     <h3>200° Bakery</h3>
                 </header>
@@ -50,8 +50,8 @@ class MyLogs extends Component {
                 <section>
                 <header>
                     <h2>Local Homemade Noodles - Asian Style
-                        <button>Edit</button>
-                        <button>Delete</button>
+                        <button className="edit-log-btn"><i className="fas fa-pencil-alt"></i></button>
+                        <button className="delete-log-btn"><i className="fas fa-trash-alt"></i></button>
                     </h2>
                     <h3>Mana Noodlehouse</h3>
                 </header>

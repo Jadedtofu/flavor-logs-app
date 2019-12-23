@@ -18,8 +18,8 @@ class MyEateries extends Component {
             <section>
                 <header>
                     <h2>Pho Mignon
-                        <button>Edit</button>
-                        <button>Delete</button><span className="disclaimer">*</span>
+                        <button className="add-eatery-btn"><i className="fas fa-pencil-alt"></i></button>
+                        <button><i className="fas fa-trash-alt"></i></button><span className="disclaimer">*</span>
                     </h2>
                 </header>
 
@@ -35,8 +35,8 @@ class MyEateries extends Component {
             <section>
                 <header>
                     <h2>200° Bakery
-                        <button>Edit</button>
-                        <button>Delete</button><span className="disclaimer">*</span>
+                        <button className="add-eatery-btn"><i className="fas fa-pencil-alt"></i></button>
+                        <button><i className="fas fa-trash-alt"></i></button><span className="disclaimer">*</span>
                     </h2>
                 </header>
                 <ul>
@@ -51,8 +51,8 @@ class MyEateries extends Component {
             <section>
                 <header>
                     <h2>Mana Noodlehouse
-                        <button>Edit</button>
-                        <button>Delete</button><span className="disclaimer">*</span>
+                        <button className="add-eatery-btn"><i className="fas fa-pencil-alt"></i></button>
+                        <button><i className="fas fa-trash-alt"></i></button><span className="disclaimer">*</span>
                     </h2>
                 </header>
 

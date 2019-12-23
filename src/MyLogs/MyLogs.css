@@ -1,3 +1,9 @@
+.edit-log-btn {
+    cursor: pointer;
+    margin-left: 1%;
+    margin-right: 0.5%;
+}
+
 .my-logs-header {
     padding: 3% 2% 0%;
     text-align: center;

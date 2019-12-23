@@ -9,6 +9,7 @@ import './App.css';
 import MyLogs from './MyLogs/MyLogs';
 import MyEateries from './MyEateries/MyEateries';
 import AddEatery from './AddEatery/AddEatery';
+import AddLog from './AddLog/AddLog';
 
 class App extends Component {
   state = {
@@ -50,6 +51,11 @@ class App extends Component {
         <Route 
           path='/addEatery'
           component={AddEatery}
+        />
+
+        <Route
+          path='/addLog'
+          component={AddLog}
         />
 
         <Footer />
