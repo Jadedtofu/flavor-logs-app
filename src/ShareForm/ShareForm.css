@@ -1,0 +1,108 @@
+form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+select {
+    background-color: transparent;
+}
+
+.shareform {
+    padding: 16px;
+    max-width: 400px;
+}
+
+.shareform label {
+    display: block;
+    font-size: 1em;
+    padding-bottom: 8px;
+}
+
+.shareform input,
+.shareform textarea,
+.shareform select {
+  /* font-family: "Open Sans", sans-serif; */
+  font-size: 0.75em;
+  padding: 8px;
+  width: 325px;
+}
+
+.shareform select {
+    height: 45px;
+}
+
+.shareform > .field {
+    margin-bottom: 16px;
+}
+
+.shareform > .buttons {
+    margin-top: 26px;
+}
+/* 
+select:active, 
+select:hover {
+    outline-color: rgb(255, 135, 22);
+    background-color:  rgb(253, 219, 188);
+    transition: 0.5s ease-out;
+} */
+
+@media screen and (min-width: 320px) and (max-width: 400px){
+    .shareform input,
+    .shareform textarea,
+    .shareform select {
+    font-size: 0.75em;
+    padding: 8px;
+    width: 250px;
+    }
+
+}
+
+@media screen and (min-width: 401px) and (max-width: 600px) {
+    .shareform input,
+    .shareform textarea,
+    .shareform select {
+    font-size: 0.75em;
+    padding: 8px;
+    width: 300px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    .shareform input,
+    .shareform textarea,
+    .shareform select {
+    font-size: 0.75em;
+    padding: 8px;
+    width: 350px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .shareform input,
+    .shareform textarea,
+    .shareform select {
+    font-size: 0.8em;
+    padding: 8px;
+    width: 400px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1185px) {
+    .shareform input,
+    .shareform textarea,
+    .shareform select {
+    font-size: 0.8em;
+    padding: 8px;
+    width: 400px;
+    }
+}
+
+@media screen and (min-width: 1186px) and (max-width: 4000px) {
+    .shareform input,
+    .shareform textarea,
+    .shareform select {
+    font-size: 0.8em;
+    padding: 8px;
+    width: 400px;
+    }
+}
