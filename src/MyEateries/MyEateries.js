@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './MyEateries.css';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import ApiContext from '../ApiContext';
 
 class MyEateries extends Component {
@@ -12,26 +12,32 @@ class MyEateries extends Component {
             </header>
 
             <section>
-                <button>Add a Eatery</button>
+                <button><Link to='/addEatery'>Add a Eatery</Link></button>
             </section>
 
             <section>
                 <header>
-                    <h2>Pho Mignon</h2>
+                    <h2>Pho Mignon
+                        <button>Edit</button>
+                        <button>Delete</button><span className="disclaimer">*</span>
+                    </h2>
                 </header>
+
                 <ul>
                     <li>Phone Number: 760-320-5210</li>
                     <li>Address: 1235 North Island Street, 
                         San Diego, CA 92108</li>
                     <li>Additional Notes: Open M-F 9 am - 9 pm, Sat 9 am - 11 pm, Sun 10 am - 8 pm</li>
                 </ul>
-                <button>Edit</button>
-                <button>Delete*</button>
+
             </section>
 
             <section>
                 <header>
-                    <h2>200° Bakery</h2>
+                    <h2>200° Bakery
+                        <button>Edit</button>
+                        <button>Delete</button><span className="disclaimer">*</span>
+                    </h2>
                 </header>
                 <ul>
                     <li>Phone Number: 619-280-7599</li>
@@ -39,22 +45,24 @@ class MyEateries extends Component {
                         San Diego, CA 92123</li>
                     <li>Additional Notes: Open M-F 7 am - 5 pm, Sat 7 am - 8 pm, Sun 9 am - 3 pm</li>
                 </ul>
-                <button>Edit</button>
-                <button>Delete*</button>
+
             </section>
 
             <section>
                 <header>
-                    <h2>Mana Noodlehouse</h2>
+                    <h2>Mana Noodlehouse
+                        <button>Edit</button>
+                        <button>Delete</button><span className="disclaimer">*</span>
+                    </h2>
                 </header>
+
                 <ul>
                     <li>Phone Number: 858-780-2323</li>
                     <li>Address: 590 Convoy Street, 
                         San Diego, CA 92117</li>
                     <li>Additional Notes: Open M-F 11 am - 9 pm, Sat 11 am - 12 am, Sun 11 am - 6 pm</li>
                 </ul>
-                <button>Edit</button>
-                <button>Delete*</button>
+
             </section>
 
             <section>

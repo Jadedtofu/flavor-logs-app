@@ -8,6 +8,7 @@ import ApiContext from './ApiContext';
 import './App.css';
 import MyLogs from './MyLogs/MyLogs';
 import MyEateries from './MyEateries/MyEateries';
+import AddEatery from './AddEatery/AddEatery';
 
 class App extends Component {
   state = {
@@ -44,6 +45,11 @@ class App extends Component {
         <Route
           path='/myEateries'
           component={MyEateries}
+        />
+
+        <Route 
+          path='/addEatery'
+          component={AddEatery}
         />
 
         <Footer />

@@ -17,7 +17,10 @@ class MyLogs extends Component {
 
                 <section>
                 <header>
-                    <h2>Best pho in town</h2>
+                    <h2>Best pho in town
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </h2>
                     <h3>Pho Mignon</h3>
                 </header>
                     <ul>
@@ -26,13 +29,14 @@ class MyLogs extends Component {
                         <li>Last Date Eaten: 11/10/19</li>
                     </ul>
                     <blockquote>The broth is clear, flavorful, and not greasy at all! The rare steak was not overcooked; the flank was tender. The noodles were soft, but not too soft to break apart with chopsticks. Will go here again!</blockquote>
-                    <button>Edit</button>
-                    <button>Delete</button>
                 </section>
 
                 <section>
                 <header>
-                    <h2>Softest Bread</h2>
+                    <h2>Softest Bread
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </h2>
                     <h3>200° Bakery</h3>
                 </header>
                     <ul>
@@ -41,13 +45,14 @@ class MyLogs extends Component {
                         <li>Last Date Eaten: 9/5/19</li>
                     </ul>
                     <blockquote>The lines were a little long, but worth it. Softest bread roll to start the day. The aroma was perfect, resembling a nice cup of freshly brewed coffee, and the flavor was not overbearing.</blockquote>
-                    <button>Edit</button>
-                    <button>Delete</button>
                 </section>
 
                 <section>
                 <header>
-                    <h2>Local Homemade Noodles - Asian Style</h2>
+                    <h2>Local Homemade Noodles - Asian Style
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </h2>
                     <h3>Mana Noodlehouse</h3>
                 </header>
                     <ul>
@@ -56,8 +61,6 @@ class MyLogs extends Component {
                         <li>Last Date Eaten: 7/5/19</li>
                     </ul>
                     <blockquote>First time visiting this place. The noodles were definitely home made, but not of a very consistent shape. They tasted okay, but the broth was a little greasy and there weren't a lot of side dish selections. Might try again later to see if they improve over time.</blockquote>
-                    <button>Edit</button>
-                    <button>Delete</button>
                 </section>    
             </main>
         );
