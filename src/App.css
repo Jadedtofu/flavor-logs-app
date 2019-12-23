@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: rgb(74, 73, 80);
+  text-decoration: none;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: rgb(53, 52, 58);
+  text-align: center;
+  line-height: 1.5;
+}
+
+body p {
+  padding: 1% 5%;
+}
+
+section {
+  min-height: 100px;
+  padding: 0% 10% 20% 10%;
+}
