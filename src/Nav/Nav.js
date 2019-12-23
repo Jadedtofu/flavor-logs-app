@@ -8,14 +8,14 @@ class Nav extends Component {
             <>
                 <nav className="top" role="navigation">
                     <header className="logo" role="banner">
-                        <h1><Link to='/'><i className="fas fa-utensils"></i>Flavor Logs</Link></h1>
+                        <h1><Link to='/'><i className="fas fa-book"></i>Flavor Logs</Link></h1>
                     </header>
                     <ul>
                         <li className="my-logs">
-                            <Link to='/myLogs'>My Logs</Link> 
+                            <Link to='/myLogs'><i className="far fa-file-alt"></i>My Logs</Link> 
                         </li>
                         <li className="my-eateries">
-                            <Link to='/myEateries'>My Eateries</Link>
+                            <Link to='/myEateries'><i className="fas fa-utensils"></i>My Eateries</Link>
                         </li>
                     </ul>
                 </nav>

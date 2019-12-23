@@ -14,16 +14,15 @@ a:hover {
 }
 
 .logo {
-    font-size: 85%;
+    font-size: 80%;
     margin-left: 2%;
     position: absolute;
     text-align: left;
     width: 20%;
 }
 
-.logo .fa-utensils {
-    font-size: 110%;
-    padding-right: 5%;
+.logo .fa-book {
+    padding-right: 6%;
 }
 
 .my-logs,
@@ -32,6 +31,15 @@ a:hover {
     font-weight: bold;
     margin-top: 0.3%;
 }
+
+.my-logs .fa-file-alt {
+    padding-right: 6%;
+}
+
+.my-eateries .fa-utensils {
+    padding-right: 6%;
+}
+
 
 nav {
     padding: 1% 0;
