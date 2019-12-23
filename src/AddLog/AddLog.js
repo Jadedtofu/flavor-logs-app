@@ -45,7 +45,7 @@ class AddLog extends Component {
 
                     <div className="field">
                         <label htmlFor="eaten-date">Last Eaten Date</label>
-                        <input type="date" name="eaten-date" id="eaten-date" value="2019-11-10" min="1980-01-01" required />
+                        <input type="date" name="eaten-date" id="eaten-date" defaultValue="2019-12-24" min="1980-01-01" required />
                     </div>
 
                     <div className="field">
