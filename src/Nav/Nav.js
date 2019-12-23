@@ -8,7 +8,7 @@ class Nav extends Component {
             <>
                 <nav className="top" role="navigation">
                     <header className="logo" role="banner">
-                        <h1><Link to='/'><i className="fas fa-utensils"></i></Link></h1>
+                        <h1><Link to='/'><i className="fas fa-utensils"></i>Flavor Logs</Link></h1>
                     </header>
                     <ul>
                         <li className="my-logs">

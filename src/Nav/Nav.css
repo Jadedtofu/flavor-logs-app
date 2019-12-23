@@ -14,9 +14,16 @@ a:hover {
 }
 
 .logo {
+    font-size: 85%;
     margin-left: 2%;
     position: absolute;
     text-align: left;
+    width: 20%;
+}
+
+.logo .fa-utensils {
+    font-size: 110%;
+    padding-right: 5%;
 }
 
 .my-logs,
