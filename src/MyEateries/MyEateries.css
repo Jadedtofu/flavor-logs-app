@@ -1,7 +1,17 @@
 .add-eatery-btn {
+    padding: 1%;
+}
+
+.edit-eatery-btn {
     cursor: pointer;
     margin-left: 1%;
     margin-right: 0.5%;
+    padding: 0.5%;
+}
+
+.delete-eatery-btn {
+    cursor: pointer;
+    padding: 0.5%;
 }
 
 .disclaimer {

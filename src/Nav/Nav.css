@@ -1,16 +1,16 @@
 a:active {
     transition: 0.1s ease-out;
-    color: rgb(0, 167, 111);
+    color: rgb(255, 249, 221);
 }
 
 a:focus {
-    color: rgb(88, 192, 140);
+    color: rgb(255, 245, 202);
     border-bottom: 2px solid;
 }
 
 a:hover {
     transition: 0.2s ease-out;
-    color: rgb(0, 158, 84);
+    color: rgb(252, 246, 239);
 }
 
 .logo {
@@ -43,7 +43,6 @@ a:hover {
 
 nav {
     padding: 1% 0;
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -51,7 +50,6 @@ nav {
 }
 
 nav.top {
-    position: fixed;
     text-align: right;
     z-index: 10;
 }

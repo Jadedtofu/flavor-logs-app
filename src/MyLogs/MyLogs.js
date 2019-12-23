@@ -12,20 +12,19 @@ class MyLogs extends Component {
                     <h1 className="my-logs-title">My Logs</h1>
                 </header>
 
-                <section className="searchby sort">
-                    <SearchBox />
-                    <div className="sortby">
-                        <select name="sortby">
-                            <option value="sort-default">Sort by ...</option>
-                            {/* <option value="name">Sort by Name</option> */}
-                            <option value="rating">Select by Rating</option>
-                            <option value="date">Sort by Date</option>
-                        </select>
-                    </div>
-                </section>
-
                 <section>
-                    <button><Link to='/addLog'>Add a log</Link></button>
+                    <div className="searchby sort">
+                        <SearchBox />
+                        <div className="sortby">
+                            <select name="sortby">
+                                <option value="sort-default">Sort by ...</option>
+                                {/* <option value="name">Sort by Name</option> */}
+                                <option value="rating">Select by Rating</option>
+                                <option value="date">Sort by Date</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button className="add-log-btn"><Link to='/addLog'>Add a log</Link></button>
                 </section>
 
                 <section>
@@ -49,7 +48,9 @@ class MyLogs extends Component {
                 <section>
                 <header>
                     <h2>Softest Bread
-                        <button className="edit-log-btn"><i className="fas fa-pencil-alt"></i></button>
+                        <button className="edit-log-btn">
+                            <Link to='/editLog'><i className="fas fa-pencil-alt"></i></Link>
+                        </button>
                         <button className="delete-log-btn"><i className="fas fa-trash-alt"></i></button>
                     </h2>
                     <h3>200° Bakery</h3>
@@ -65,7 +66,9 @@ class MyLogs extends Component {
                 <section>
                 <header>
                     <h2>Local Homemade Noodles - Asian Style
-                        <button className="edit-log-btn"><i className="fas fa-pencil-alt"></i></button>
+                        <button className="edit-log-btn">
+                            <Link to='/editLog'><i className="fas fa-pencil-alt"></i></Link>
+                        </button>
                         <button className="delete-log-btn"><i className="fas fa-trash-alt"></i></button>
                     </h2>
                     <h3>Mana Noodlehouse</h3>

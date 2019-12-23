@@ -1,7 +1,17 @@
+.add-log-btn {
+    padding: 1%;
+}
+
 .edit-log-btn {
     cursor: pointer;
     margin-left: 1%;
     margin-right: 0.5%;
+    padding: 0.5%;
+}
+
+.delete-log-btn {
+    cursor: pointer;
+    padding: 0.5%;
 }
 
 .item-info .rating, 
@@ -18,3 +28,9 @@
 .my-logs-title {
     margin: 5% 2% 2% 2%;
 }
+
+.searchby {
+    display: flex;
+    margin: 0% 2% 0% 2%;
+}
+

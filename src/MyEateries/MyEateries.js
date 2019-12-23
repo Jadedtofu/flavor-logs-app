@@ -17,16 +17,16 @@ class MyEateries extends Component {
             </section> */}
 
             <section>
-                <button><Link to='/addEatery'>Add a Eatery</Link></button>
+                <button className="add-eatery-btn"><Link to='/addEatery'>Add a Eatery</Link></button>
             </section>
 
             <section>
                 <header>
                     <h2>Pho Mignon
-                        <button className="add-eatery-btn">
+                        <button className="edit-eatery-btn">
                             <Link to='/editEatery'><i className="fas fa-pencil-alt"></i></Link>
                         </button>
-                        <button><i className="fas fa-trash-alt"></i></button><span className="disclaimer">*</span>
+                        <button className="delete-eatery-btn"><i className="fas fa-trash-alt"></i></button><span className="disclaimer">*</span>
                     </h2>
                 </header>
 
@@ -42,10 +42,10 @@ class MyEateries extends Component {
             <section>
                 <header>
                     <h2>200° Bakery
-                        <button className="add-eatery-btn">
+                        <button className="edit-eatery-btn">
                             <Link to='/editEatery'><i className="fas fa-pencil-alt"></i></Link>
                         </button>
-                        <button><i className="fas fa-trash-alt"></i></button><span className="disclaimer">*</span>
+                        <button className="delete-eatery-btn"><i className="fas fa-trash-alt"></i></button><span className="disclaimer">*</span>
                     </h2>
                 </header>
                 <ul>
@@ -60,10 +60,10 @@ class MyEateries extends Component {
             <section>
                 <header>
                     <h2>Mana Noodlehouse
-                        <button className="add-eatery-btn">
+                        <button className="edit-eatery-btn">
                             <Link to='/editEatery'><i className="fas fa-pencil-alt"></i></Link>
                         </button>
-                        <button><i className="fas fa-trash-alt"></i></button><span className="disclaimer">*</span>
+                        <button className="delete-eatery-btn"><i className="fas fa-trash-alt"></i></button><span className="disclaimer">*</span>
                     </h2>
                 </header>
 

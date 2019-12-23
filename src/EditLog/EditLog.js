@@ -16,7 +16,7 @@ class EditLog extends Component {
         return(
             <main className="edit-log-page" role="main">
                 <header className="edit-log-header" role="banner">
-                    <h1 className="edit-log-text">Add a Log</h1>
+                    <h1 className="edit-log-text">Edit a Log</h1>
                 </header>
 
                 <ShareForm>

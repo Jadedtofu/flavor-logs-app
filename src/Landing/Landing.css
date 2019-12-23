@@ -3,7 +3,11 @@
     text-align: center;
 }
 
-
 .title-name {
+    font-size: 2.4em;
     margin: 5% 2% 2% 2%;
+}
+
+.view-logs-btn {
+    padding: 1%;
 }
