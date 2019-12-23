@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ShareForm from '../ShareForm/ShareForm';
 import './AddLog.css';
+import { Link } from 'react-router-dom';
 // import ApiContext from '../ApiContext';
 // import config from '../config';
 
@@ -54,7 +55,7 @@ class AddLog extends Component {
                     </div>
 
                     <div className="buttons">
-                        <button type="submit" className="add-log-form-btn">Add</button>
+                        <button type="submit" className="add-log-form-btn"><Link to='/myLogs'>Add</Link></button>
                     </div>
                 </ShareForm>
             </main>

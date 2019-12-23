@@ -1,0 +1,18 @@
+.edit-eatery-page {
+    margin-bottom: 30%;
+    padding: 0% 5% 5% 5%;
+}
+
+.edit-eatery-header {
+    padding: 3% 2% 0%;
+    text-align: center;
+}
+
+.edit-eatery-text {
+    cursor: default;
+    margin: 5% 2% 2% 2%;
+}
+
+.edit-eatery-form-btn {
+    cursor: pointer;
+}

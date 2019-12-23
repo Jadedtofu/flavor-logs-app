@@ -4,6 +4,12 @@
     margin-right: 0.5%;
 }
 
+.item-info .rating, 
+.item-info .last-date {
+    display: inline-block;
+    padding: 0% 1.5% 0% 1.5%;
+}
+
 .my-logs-header {
     padding: 3% 2% 0%;
     text-align: center;

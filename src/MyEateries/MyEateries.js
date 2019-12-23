@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './MyEateries.css';
 import { Link } from 'react-router-dom';
+// import SearchBox from '../SearchBox/SearchBox';
 // import ApiContext from '../ApiContext';
 
 class MyEateries extends Component {
@@ -11,6 +12,10 @@ class MyEateries extends Component {
                 <h1 className="my-eateries-title" >My Eateries</h1>
             </header>
 
+            {/* <section className="searchby">
+                <SearchBox />
+            </section> */}
+
             <section>
                 <button><Link to='/addEatery'>Add a Eatery</Link></button>
             </section>
@@ -18,7 +23,9 @@ class MyEateries extends Component {
             <section>
                 <header>
                     <h2>Pho Mignon
-                        <button className="add-eatery-btn"><i className="fas fa-pencil-alt"></i></button>
+                        <button className="add-eatery-btn">
+                            <Link to='/editEatery'><i className="fas fa-pencil-alt"></i></Link>
+                        </button>
                         <button><i className="fas fa-trash-alt"></i></button><span className="disclaimer">*</span>
                     </h2>
                 </header>
@@ -35,7 +42,9 @@ class MyEateries extends Component {
             <section>
                 <header>
                     <h2>200° Bakery
-                        <button className="add-eatery-btn"><i className="fas fa-pencil-alt"></i></button>
+                        <button className="add-eatery-btn">
+                            <Link to='/editEatery'><i className="fas fa-pencil-alt"></i></Link>
+                        </button>
                         <button><i className="fas fa-trash-alt"></i></button><span className="disclaimer">*</span>
                     </h2>
                 </header>
@@ -51,7 +60,9 @@ class MyEateries extends Component {
             <section>
                 <header>
                     <h2>Mana Noodlehouse
-                        <button className="add-eatery-btn"><i className="fas fa-pencil-alt"></i></button>
+                        <button className="add-eatery-btn">
+                            <Link to='/editEatery'><i className="fas fa-pencil-alt"></i></Link>
+                        </button>
                         <button><i className="fas fa-trash-alt"></i></button><span className="disclaimer">*</span>
                     </h2>
                 </header>
