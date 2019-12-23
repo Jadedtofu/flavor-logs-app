@@ -11,6 +11,7 @@ import MyEateries from './MyEateries/MyEateries';
 import AddEatery from './AddEatery/AddEatery';
 import AddLog from './AddLog/AddLog';
 import EditEatery from './EditEatery/EditEatery';
+import EditLog from './EditLog/EditLog';
 
 class App extends Component {
   state = {
@@ -47,6 +48,11 @@ class App extends Component {
         <Route
           path='/addLog'
           component={AddLog}
+        />
+
+        <Route
+          path='/editLog'
+          component={EditLog}
         />
 
         <Route

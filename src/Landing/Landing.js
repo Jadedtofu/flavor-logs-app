@@ -6,11 +6,14 @@ class Landing extends Component {
     render() {
         return (
             <main className="landing-page" role="main">
-                <header className="start-header" role="banner">
-                    <h1 className="start-title">Getting Started</h1>
+                <header className="title-header" role="banner">
+                    <h1 className="title-name">Flavor Logs</h1>
                 </header>
 
                 <section>
+                    <header>
+                        <h3>Getting Started</h3>
+                    </header>
                     <p>Flavor Log helps you remember the best dishes (or the not-so-best dishes) from new eateries as well as ones you like to frequent.</p>
                     <p>[<em>Screenshot placeholder of Logs</em>]</p>
                 </section>

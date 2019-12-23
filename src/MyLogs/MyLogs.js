@@ -31,7 +31,9 @@ class MyLogs extends Component {
                 <section>
                 <header>
                     <h2>Best pho in town
-                        <button className="edit-log-btn"><i className="fas fa-pencil-alt"></i></button>
+                        <button className="edit-log-btn">
+                            <Link to='/editLog'><i className="fas fa-pencil-alt"></i></Link>
+                        </button>
                         <button className="delete-log-btn"><i className="fas fa-trash-alt"></i></button>
                     </h2>
                     <h3>Pho Mignon</h3>

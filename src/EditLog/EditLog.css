@@ -1,0 +1,18 @@
+.edit-log-page {
+    margin-bottom: 30%;
+    padding: 0% 5% 5% 5%;
+}
+
+.edit-log-header {
+    padding: 3% 2% 0%;
+    text-align: center;
+}
+
+.edit-log-text {
+    cursor: default;
+    margin: 5% 2% 2% 2%;
+}
+
+.edit-log-form-btn {
+    cursor: pointer;
+}
