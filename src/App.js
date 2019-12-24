@@ -3,8 +3,6 @@ import { Route } from 'react-router-dom';
 import Nav from './Nav/Nav';
 import Footer from './Footer/Footer';
 import Landing from './Landing/Landing';
-import ApiContext from './ApiContext';
-// import config from './config';
 import './App.css';
 import MyLogs from './MyLogs/MyLogs';
 import MyEateries from './MyEateries/MyEateries';
@@ -12,12 +10,83 @@ import AddEatery from './AddEatery/AddEatery';
 import AddLog from './AddLog/AddLog';
 import EditEatery from './EditEatery/EditEatery';
 import EditLog from './EditLog/EditLog';
+import ApiContext from './ApiContext';
+// import config from './config';
 
 class App extends Component {
   state = {
-    eateries: [],
-    logs: []
+    eateries: [
+      {
+        id: 1, 
+        name: "Pho Mignon", 
+        phone: "760-320-5210", 
+        address: "1235 North Island Street, San Diego, CA 92108", 
+        notes: "Open M-F 9 am - 9 pm, Sat 9 am - 11 pm, Sun 10 am - 8 pm"
+      },
+      {
+        id: 2, 
+        name: "200° Bakery", 
+        phone: "619-280-7599", 
+        address: "8590 Elm Wake Drive, San Diego, CA 92123", 
+        notes: "Open M-F 7 am - 5 pm, Sat 7 am - 8 pm, Sun 9 am - 3 pm"
+      },
+      {
+        id: 3, 
+        name: "Mana Noodlehouse", 
+        phone: "858-780-2323", 
+        address: "590 Convoy Street, San Diego, CA 92117", 
+        notes: "Open M-F 11 am - 9 pm, Sat 11 am - 12 am, Sun 11 am - 6 pm"
+      }
+    ],
+
+    logs: [
+      {
+        id: 1, 
+        title: "Best pho in town", 
+        info: "The broth is clear, flavorful, and not greasy at all! The rare steak was not overcooked; the flank was tender. The noodles were soft, but not too soft to break apart with chopsticks. Will go here again!",
+        ordered: "P13 - Rare Steak and Flank Beef Noodle Soup", 
+        rating: 5, 
+        date: "11/10/19", 
+        eatery_id: 1
+      },
+      {
+        id: 2, 
+        title: "Softest bread", 
+        info: "The lines were a little long, but worth it. Softest bread roll to start the day. The aroma was perfect, resembling a nice cup of freshly brewed coffee, and the flavor was not overbearing", 
+        ordered: "Morning Coffee Roll", 
+        rating: 4, 
+        date: "9/5/19", 
+        eatery_id: 2},
+      {
+        id: 3, 
+        title: "Local Homemade Noodles", 
+        info: "First time visiting this place. The noodles were definitely home made, but not of a very consistent shape. They tasted okay, but the broth was a little greasy and there weren't a lot of side dish selections. Might try again later to see if they improve over time.",
+        ordered: "Chicken & Noodles with Leek",
+        rating: 3,
+        date: "7/5/19",
+        eatery_id: 3
+      },
+      {
+        id: 4, 
+        title: "Fluffy cake", 
+        info: "Usually the go-to is bread, but wanted to give the cakes a try. The Peach Fluff caught my eye. The colors were pleasant, and there were small decorative, edible peaches on top. It wasn't overly sweet, but was sweet enough. The cake feels like it melts when eaten, moist and soft, very fluffy like peach cotton candy.",
+        ordered: "Peach Fluff Layered Cake",
+        rating: 5,
+        date: "12/10/19",
+        eatery_id: 2
+      },
+      {
+        id: 5, 
+        title: "Smooth noodles", 
+        eatery_id: 3
+      },
+    ]
   };
+
+  // state = {
+  //   eateries: [],
+  //   logs: []
+  // };
 
   render() {
     const value={
@@ -30,6 +99,8 @@ class App extends Component {
       // editLog: this.state.handleEditLog,
       // deleteLog: this.state.handleDeleteLog
     }
+
+    console.log(value);
 
     return(    
       <ApiContext.Provider value={value}>
