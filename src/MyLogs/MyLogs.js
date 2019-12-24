@@ -25,8 +25,8 @@ class MyLogs extends Component {
         //     <div className="sortby">
         //         <select name="sortby">
         //             <option value="sort-default">Sort by ...</option>
-        //             {/* <option value="name">Sort by Name</option> */}
-        //             <option value="rating">Select by Rating</option>
+        //             <option value="eatery">Sort by Eatery</option>
+        //             <option value="rating">Sort by Rating</option>
         //             <option value="date">Sort by Date</option>
         //         </select>
         //     </div>
@@ -65,7 +65,7 @@ class MyLogs extends Component {
                 </section>
 
                 {logMapped}
-                
+
             </main>
         );
     }
