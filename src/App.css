@@ -1,11 +1,11 @@
 * {
   box-sizing: border-box;
-  background-color: rgb(49, 46, 44);
+  background-color: rgb(48, 42, 38);
   color: rgb(240, 238, 233);
 }
 
-a, h1 {
-  color: rgb(255, 225, 94);
+a, h1, h2 {
+  color: rgb(253, 224, 94);
   text-decoration: none;
 }
 
@@ -27,4 +27,8 @@ h1, h2, h3, p {
 section {
   min-height: 100px;
   padding: 0% 10% 6% 10%;
+}
+
+ul {
+  padding: 0%;
 }

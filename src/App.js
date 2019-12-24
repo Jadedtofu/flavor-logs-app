@@ -78,6 +78,10 @@ class App extends Component {
       {
         id: 5, 
         title: "Smooth noodles", 
+        info: "Tried to eat their noodles again later. The broth and noodle quality improved quite a lot. They're a more consistent shape now and the broth is less greasy. The meat and vegetable ratio was really nice as well. Great aroma.",
+        ordered: "Lamb Noodle Broth with Chives and Mushrooms",
+        rating: 4,
+        date: "11/9/19",
         eatery_id: 3
       },
     ]
@@ -100,7 +104,7 @@ class App extends Component {
       // deleteLog: this.state.handleDeleteLog
     }
 
-    console.log(value);
+    // console.log(value);
 
     return(    
       <ApiContext.Provider value={value}>

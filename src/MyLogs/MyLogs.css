@@ -2,15 +2,15 @@
     padding: 1%;
 }
 
+.delete-log-btn {
+    cursor: pointer;
+    padding: 0.5% 0.7% 0.5% 0.7%;
+}
+
 .edit-log-btn {
     cursor: pointer;
     margin-left: 1%;
     margin-right: 0.5%;
-    padding: 0.5%;
-}
-
-.delete-log-btn {
-    cursor: pointer;
     padding: 0.5%;
 }
 

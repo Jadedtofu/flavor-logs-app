@@ -1,44 +1,51 @@
-// import React, { Component } from 'react';
-// import './ALog.css';
-// // import ApiContext from '../ApiContext';
-// // import config from '../config';
+import React, { Component } from 'react';
+import './ALog.css';
+import { Link } from 'react-router-dom';
+import ApiContext from '../ApiContext';
+// import config from '../config';
 
-// class ALog extends Component {
-//     static defaultProps = {
-//         match: {
-//           params: {}
-//         },
-//     }
+class ALog extends Component {
+    static defaultProps = {
+        match: {
+          params: {}
+        },
+    }
 
-//     render() {
-//         // const { log } = this.props;
-//         return(
-//             <section>
-//             <header>
-//                 <h2 className="log-name">Log Name
-//                     <button className="edit-log-btn">
-//                         <Link to='/editLog'><i className="fas fa-pencil-alt"></i></Link>
-//                     </button>
-//                     <button className="delete-log-btn"><i className="fas fa-trash-alt"></i></button>
-//                 </h2>
-//                 <h3 className="eatery-name">
-//                     Eatery Name
-//                 </h3>
-//             </header>
+    static contextType = ApiContext;
 
-//             <blockquote>
-//                 Log Detail Description
-//             </blockquote>
+    render() {      // turn rating into stars !! 
+        const { title, info, ordered, rating, date, eatery } = this.props;
+        // console.log(this.props);
 
-//                 <ul className='item-info'>
-//                     <li>Ordered: {log.ordered}</li>
-//                     <li className="rating">Rating: {log.rating}</li>
-//                     <li className="last-date">Last Date Eaten: {log.date}</li>
-//                 </ul>
+        const eateryName = eatery[0].name;
+        // console.log(eateryName);
 
-//             </section>
-//         );
-//     }
-// }
+        return(
+            <section>
+                <header role="banner">
+                    <h2 className="log-name">{title}</h2>
+                    <h3 className="eatery-name">{eateryName}</h3>
+                </header>
 
-// export default ALog;
+                <blockquote>
+                    {info}
+                </blockquote>
+
+                <ul className='item-info'>
+                    <li>Ordered: {ordered}</li>
+                    <li className="rating">Rating: {rating} </li>
+                    <li className="last-date">Last Date Eaten: {date}</li>
+                </ul>
+
+                <div className="edit-delete-btns">
+                    <button className="edit-log-btn">
+                        <Link to='/editLog'><i className="fas fa-pencil-alt"></i></Link>
+                    </button>
+                    <button className="delete-log-btn"><i className="fas fa-trash-alt"></i></button>
+                </div>
+            </section>
+        );
+    }
+}
+
+export default ALog;

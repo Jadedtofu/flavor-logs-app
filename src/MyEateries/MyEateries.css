@@ -2,20 +2,9 @@
     padding: 1%;
 }
 
-.edit-eatery-btn {
-    cursor: pointer;
-    margin-left: 1%;
-    margin-right: 0.5%;
-    padding: 0.5%;
-}
-
-.delete-eatery-btn {
-    cursor: pointer;
-    padding: 0.5%;
-}
-
 .disclaimer {
-    font-size: 60%;
+    font-size: 95%;
+    margin-left: 0.5%;
 }
 
 .my-eateries-header {
