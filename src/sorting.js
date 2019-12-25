@@ -34,16 +34,23 @@
         // });
         // console.log(sortedLogTitles);
 
-        // // how to get logs for sorted titles? 
-        // const getLogSorted = (logs=[], eateryTitle) => (
-        // (!eateryTitle)
-        // ? logs
-        // : logs.filter(log => log.title === eateryTitle)
-        // );
-        //                                 // ? how to map? for loop? 
-        // console.log(getLogSorted(logs, sortedLogTitles[3]));
-        // // this gets the log associated to the title, but how to get all of them? 
 
+        // const getLogSorted = (logs=[], sortedLogTitles) => {  // returns an array of the logs sorted by name !!
+        //         let sortedLogs = [];
+        //         for(let i = 0, max = sortedLogTitles.length; i < max; i++) {
+        //             if (!sortedLogTitles[i]) {
+        //                 return logs;
+        //             } else {
+        //                 sortedLogs.push(logs.filter(log => log.title === sortedLogTitles[i]));
+        //                 console.log(sortedLogs);
+        //             }
+        //         }
+        //         return sortedLogs;
+        //     }
+        // let tempSortedNameLogs = getLogSorted(logs, sortedLogTitles);
+
+        // let logsSortedByName = [].concat.apply([], tempSortedNameLogs);
+        // console.log(logsSortedByName);
 
         // render() {
             

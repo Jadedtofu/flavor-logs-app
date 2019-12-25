@@ -27,7 +27,42 @@ class MyLogs extends Component {
         );
         // console.log(getEateriesForLog(eateries, 3));
 
-        // rendering logs
+        // sorted log titles below: 
+        let getLogTitles = (logs) => {
+            let logTitles = [];
+            for (let i = 0, max = logs.length; i < max; i++) {
+                logTitles.push(logs[i].title);
+                // console.log(logTitles);
+            }
+            return logTitles;
+        }
+        let logTitles = getLogTitles(logs);
+
+        let sortedLogTitles = logTitles.sort((a, b) => {
+            if (a < b) return -1;
+            else if (a > b) return 1;
+            return 0;
+        });
+        // console.log(sortedLogTitles);
+        
+        const getLogSorted = (logs=[], sortedLogTitles) => {  // returns an array of the logs sorted by name !!
+            let sortedTitleLogs = [];
+            for(let i = 0, max = sortedLogTitles.length; i < max; i++) {
+                if (!sortedLogTitles[i]) {
+                    return logs;
+                } else {
+                    sortedTitleLogs.push(logs.filter(log => log.title === sortedLogTitles[i]));
+                    // console.log(sortedLogs);
+                }
+            }
+            return sortedTitleLogs;
+        }
+        let tempSortedTitleLogs = getLogSorted(logs, sortedLogTitles);
+
+        let logsSortedByTitle = [].concat.apply([], tempSortedTitleLogs);
+        console.log(logsSortedByTitle);
+
+        // rendering all logs
         const logMapped = logs.map(log => 
             <ALog key={log.id}
                   id={log.id}
@@ -40,6 +75,19 @@ class MyLogs extends Component {
             />
         );
 
+        // render of logs sorted by title:
+        // const logsSortedTitleMapped = logsSortedByTitle.map(log => 
+        //     <ALog key={log.id}
+        //     id={log.id}
+        //     title={log.title}
+        //     info={log.info}
+        //     ordered={log.ordered}
+        //     rating={log.rating}
+        //     date={log.date}
+        //     eatery={getEateriesForLog(eateries, log.eatery_id)}
+        //     />
+        // );
+
         return(
             <main role="main">
                 <header className="my-logs-header" role="banner">
@@ -51,6 +99,7 @@ class MyLogs extends Component {
                 </section>
 
                 {logMapped}
+                {/* {logsSortedTitleMapped} */}
 
             </main>
         );
