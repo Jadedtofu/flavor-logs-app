@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './ALog.css';
+import Rating from '../Rating/Rating';
 import { Link } from 'react-router-dom';
 import ApiContext from '../ApiContext';
 // import config from '../config';
@@ -27,15 +28,15 @@ class ALog extends Component {
                     <h3 className="eatery-name">{eateryName}</h3>
                 </header>
 
+                <ul className='item-info'>
+                    <li>Ordered: {ordered}</li>
+                    <li className="rating">Rating: <Rating value={rating} /></li>
+                    <li className="last-date">Last Date Eaten: {date}</li>
+                </ul>
+
                 <blockquote>
                     {info}
                 </blockquote>
-
-                <ul className='item-info'>
-                    <li>Ordered: {ordered}</li>
-                    <li className="rating">Rating: {rating} </li>
-                    <li className="last-date">Last Date Eaten: {date}</li>
-                </ul>
 
                 <div className="edit-delete-btns">
                     <button className="edit-log-btn">

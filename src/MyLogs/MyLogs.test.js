@@ -5,6 +5,7 @@ import MyLogs from './MyLogs';
 
 it('renders without crashing', () => {
     const div = document.createElement('div');
+
     ReactDOM.render(
         <BrowserRouter>
             <MyLogs />
