@@ -6,7 +6,7 @@
 .edit-log-btn {
     cursor: pointer;
     margin-left: 1%;
-    margin-right: 0.5%;
+    margin-right: 1%;
     padding: 0.5%;
 }
 
@@ -14,4 +14,12 @@
 .item-info .last-date {
     display: inline-block;
     padding: 0% 1.5% 0% 1.5%;
+}
+
+.log-name {
+    margin-bottom: 0.5%;
+}
+
+.eatery-name {
+    margin-bottom: 1%;
 }

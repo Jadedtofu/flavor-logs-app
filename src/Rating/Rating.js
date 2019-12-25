@@ -4,7 +4,7 @@ import './Rating.css';
 export default function Rating(props) {
   const stars = [0, 0, 0, 0, 0].map((_, i) =>
     (i < props.value)
-      ? <span className="yellow" key={i}>&#9733; </span>
+      ? <span className="stars" key={i}>&#9733; </span>
       : <span key={i}>&#9734; </span>
   );
   return (
