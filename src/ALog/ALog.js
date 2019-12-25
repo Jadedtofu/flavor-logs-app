@@ -15,9 +15,9 @@ class ALog extends Component {
     static contextType = ApiContext;
 
     render() {      // turn rating into stars !! 
-        const { title, info, ordered, rating, date, eatery } = this.props;
+        // const { logs=[] } = this.context;
+        const { title, info, ordered, rating, date, eatery} = this.props;
         // console.log(this.props);
-
         const eateryName = eatery[0].name;
         // console.log(eateryName);
 

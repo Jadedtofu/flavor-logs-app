@@ -58,7 +58,7 @@ class MyLogs extends Component {
             return sortedTitleLogs;
         }
         let tempSortedTitleLogs = getLogSorted(logs, sortedLogTitles);
-
+        // flatten array of array into array of objects:
         let logsSortedByTitle = [].concat.apply([], tempSortedTitleLogs);
         console.log(logsSortedByTitle);
 
@@ -88,6 +88,17 @@ class MyLogs extends Component {
         //     />
         // );
 
+        const sortby = 
+        (
+            <div className="sortby">
+                <select name="sortby">
+                    <option value="sort-default">Sort by Title</option>
+                    <option value="eatery">Sort by Eatery</option>
+                    <option value="rating">Sort by Rating</option>
+                    <option value="date">Sort by Date</option>
+                </select>
+            </div>);
+
         return(
             <main role="main">
                 <header className="my-logs-header" role="banner">
@@ -95,6 +106,7 @@ class MyLogs extends Component {
                 </header>
 
                 <section>
+                    {sortby}
                     <button className="add-log-btn"><Link to='/addLog'>Add a log</Link></button>
                 </section>
 

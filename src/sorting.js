@@ -1,18 +1,3 @@
-// import SearchBox from '../SearchBox/SearchBox';
-
-// search logs by name?? 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         searchTerm: ''
-    //     }
-    // }
-
-    // updateSearchTerm(term) {
-    //     this.setState({
-    //         searchTerm: term
-    //     });
-    // }
 
 // sorting the logs by name, rating, date??? 
 
@@ -55,23 +40,19 @@
         // render() {
             
         // figure out sort ??? 
-        // const searchby = 
-        // (<div className="searchby">
-        //     <SearchBox
-        //         searchTerm={this.state.searchTerm}
-        //         handleUpdate={term => this.updateSearchTerm(term)} />
-        //     {/* <div className="sortby">
+        // const sortby = 
+        // (
+        //     <div className="sortby">
         //         <select name="sortby">
-        //             <option value="sort-default">Sort by All</option>
+        //             <option value="sort-default">Sort by Title</option>
         //             <option value="eatery">Sort by Eatery</option>
         //             <option value="rating">Sort by Rating</option>
         //             <option value="date">Sort by Date</option>
         //         </select>
-        //     </div> */}
-        // </div>);
+        //     </div>);
 
         // return(
-                {/* {searchby} */}
-        //)  
+                {/* {sortby} */}
+        //);  
 // }
         
