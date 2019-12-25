@@ -1,11 +1,20 @@
+.landing-sub-header {
+    color: rgb(253, 224, 94);
+}
+
 .title-header {
     padding: 3% 2% 0%;
     text-align: center;
+    margin-bottom: 5%;
 }
 
 .title-name {
     font-size: 2.4em;
     margin: 5% 2% 5% 2%;
+}
+
+.title-sub {
+    color: rgb(240, 238, 233);
 }
 
 .view-logs-btn {
