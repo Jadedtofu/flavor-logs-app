@@ -18,14 +18,12 @@ class ALog extends Component {
         // const { logs=[] } = this.context;
         const { title, info, ordered, rating, date, eatery} = this.props;
         // console.log(this.props);
-        const eateryName = eatery[0].name;
-        // console.log(eateryName);
 
         return(
             <section>
                 <header role="banner">
                     <h2 className="log-name">{title}</h2>
-                    <h3 className="eatery-name">{eateryName}</h3>
+                    <h3 className="eatery-name">{eatery}</h3>
                 </header>
 
                 <ul className='item-info'>
