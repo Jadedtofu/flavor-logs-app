@@ -10,7 +10,7 @@ a:focus {
 
 a:hover {
     transition: 0.2s ease-out;
-    color: rgb(255, 243, 82);
+    color: rgb(82, 171, 255);
 }
 
 .fa-book {

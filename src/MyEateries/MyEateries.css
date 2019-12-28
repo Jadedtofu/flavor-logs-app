@@ -3,7 +3,7 @@
 }
 
 .add-eatery-btn a {
-    color: rgb(255, 243, 82);
+    color: rgb(82, 171, 255);
 }
 
 .add-eatery-btn a:hover {
@@ -26,14 +26,11 @@
     margin-left: 0.5%;
 }
 
-
-
 .my-eateries-header {
     padding: 3% 2% 0%;
     text-align: center;
 }
 
 .my-eateries-title {
-    color: rgb(255, 243, 82);
     margin: 5% 2% 2% 2%;
 }
