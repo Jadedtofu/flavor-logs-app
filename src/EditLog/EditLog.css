@@ -9,6 +9,7 @@
 }
 
 .edit-log-text {
+    color: rgb(133, 228, 109);
     cursor: default;
     margin: 5% 2% 2% 2%;
 }

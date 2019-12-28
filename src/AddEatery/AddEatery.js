@@ -41,6 +41,7 @@ class AddEatery extends Component {
                     </div>
 
                     <div className="buttons">
+                        <button type="submit" className="add-eatery-back-btn"><Link to='/myEateries'>Back</Link></button>
                         <button type="submit" className="add-eatery-form-btn"><Link to='/myEateries'>Add</Link></button>
                     </div>
                 </ShareForm>

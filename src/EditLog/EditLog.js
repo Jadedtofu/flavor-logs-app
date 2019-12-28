@@ -55,7 +55,8 @@ class EditLog extends Component {
                     </div>
 
                     <div className="buttons">
-                        <button type="submit" className="add-log-form-btn"><Link to='/myLogs'>Edit</Link></button>
+                        <button type="submit" className="edit-log-back-btn"><Link to='/myLogs'>Back</Link></button>
+                        <button type="submit" className="edit-log-form-btn"><Link to='/myLogs'>Edit</Link></button>
                     </div>
                 </ShareForm>
             </main>
