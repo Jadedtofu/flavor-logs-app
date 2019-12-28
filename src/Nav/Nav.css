@@ -25,14 +25,18 @@ a:hover {
     width: 30%;
 }
 
-.logo a,
-.fa-book {
+.logo a {
     color: rgb(133, 228, 109);
 }
 
 .logo a:focus {
     color: rgb(174, 255, 143);
     border-bottom: 2px solid;
+}
+
+.logo a:hover {
+    transition: 0.1s ease-out;
+    color: rgb(110, 209, 86);
 }
 
 .logo a:active {
