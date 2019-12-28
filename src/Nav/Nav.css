@@ -1,16 +1,20 @@
 a:active {
     transition: 0.1s ease-out;
-    color: rgb(255, 249, 221);
+    color: rgb(253, 234, 148);
 }
 
 a:focus {
-    color: rgb(255, 245, 202);
+    color: rgb(174, 255, 143);
     border-bottom: 2px solid;
 }
 
 a:hover {
     transition: 0.2s ease-out;
-    color: rgb(252, 246, 239);
+    color: rgb(255, 243, 82);
+}
+
+.fa-book {
+    padding-right: 6%;
 }
 
 .logo {
@@ -21,8 +25,19 @@ a:hover {
     width: 30%;
 }
 
-.logo .fa-book {
-    padding-right: 6%;
+.logo a,
+.fa-book {
+    color: rgb(133, 228, 109);
+}
+
+.logo a:focus {
+    color: rgb(174, 255, 143);
+    border-bottom: 2px solid;
+}
+
+.logo a:active {
+    transition: 0.1s ease-out;
+    color: rgb(253, 234, 148);
 }
 
 .my-logs,
@@ -36,10 +51,13 @@ a:hover {
     padding-right: 6%;
 }
 
+.my-logs a:hover {
+    color: rgb(133, 228, 109);
+}
+
 .my-eateries .fa-utensils {
     padding-right: 6%;
 }
-
 
 nav {
     padding: 1% 0;

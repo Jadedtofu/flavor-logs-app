@@ -1,5 +1,5 @@
 .landing-sub-header {
-    color: rgb(253, 224, 94);
+    color: rgb(255, 243, 82);
 }
 
 .title-header {
@@ -9,6 +9,7 @@
 }
 
 .title-name {
+    color: rgb(133, 228, 109);
     font-size: 2.4em;
     margin: 5% 2% 5% 2%;
 }
@@ -19,4 +20,23 @@
 
 .view-logs-btn {
     padding: 1%;
+}
+
+.view-logs-btn a {
+    color: rgb(133, 228, 109);
+}
+
+.view-logs-btn a:hover {
+    transition: 0.2s ease-out;
+    color: rgb(255, 243, 82);
+}
+
+.view-logs-btn a:focus {
+    color: rgb(174, 255, 143);
+    border-bottom: 2px solid;
+}
+
+.view-logs-btn a:active {
+    transition: 0.1s ease-out;
+    color: rgb(253, 234, 148);
 }

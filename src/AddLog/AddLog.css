@@ -9,10 +9,30 @@
 }
 
 .add-log-text {
+    color:  rgb(133, 228, 109);
     cursor: default;
     margin: 5% 2% 2% 2%;
 }
 
 .add-log-form-btn {
     cursor: pointer;
+}
+
+.add-log-form-btn a {
+    color: rgb(133, 228, 109);
+}
+
+.add-log-form-btn a:hover {
+    transition: 0.2s ease-out;
+    color: rgb(255, 243, 82);
+}
+
+.add-log-form-btn a:focus {
+    color: rgb(174, 255, 143);
+    border-bottom: 2px solid;
+}
+
+.add-log-form-btn a:active {
+    transition: 0.1s ease-out;
+    color: rgb(253, 234, 148);
 }

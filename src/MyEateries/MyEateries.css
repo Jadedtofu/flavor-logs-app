@@ -2,10 +2,31 @@
     padding: 1%;
 }
 
+.add-eatery-btn a {
+    color: rgb(255, 243, 82);
+}
+
+.add-eatery-btn a:hover {
+    transition: 0.1s ease-out;
+    color: rgb(253, 234, 148);
+}
+
+.add-eatery-btn a:focus {
+    color: rgb(174, 255, 143);
+    border-bottom: 2px solid;
+}
+
+.add-eatery-btn a:active {
+    transition: 0.1s ease-out;
+    color: rgb(253, 234, 148);
+}
+
 .disclaimer {
     font-size: 95%;
     margin-left: 0.5%;
 }
+
+
 
 .my-eateries-header {
     padding: 3% 2% 0%;
@@ -13,5 +34,6 @@
 }
 
 .my-eateries-title {
+    color: rgb(255, 243, 82);
     margin: 5% 2% 2% 2%;
 }
