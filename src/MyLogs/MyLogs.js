@@ -41,7 +41,7 @@ class MyLogs extends Component {
                 }
             }
         }
-        console.log(flavorLogs);
+        // console.log(flavorLogs);
 
         // // sorting logic: actually sorts the log data and changes the render:
         // // implement switch case for these? ?? 
