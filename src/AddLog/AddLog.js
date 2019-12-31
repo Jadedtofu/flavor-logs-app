@@ -54,6 +54,16 @@ class AddLog extends Component {
                         <textarea name="log-notes" rows="6" placeholder="The broth is clear, flavorful, and not greasy at all! The rare steak was not overcooked; the flank was tender. The noodles were soft, but not too soft to break apart with chopsticks. Will go here again!"></textarea>
                     </div>
 
+                    <div className="field">
+                        <label htmlFor="image-link">Link to Image</label>
+                        <input type="text" name="image-link" id="image-link" placeholder="https://i.imgur.com/5NjgwCW.jpg"/>
+                    </div>
+
+                    <div className="field">
+                        <label htmlFor="image-alt">Description for Image</label>
+                        <input type="text" name="image-alt" id="image-alt" placeholder="Coffee Bread Roll next to Cup of Latte"/>
+                    </div>
+
                     <div className="buttons">
                         <button type="submit" className="add-log-back-btn"><Link to='/myLogs'>Back</Link></button>
                         <button type="submit" className="add-log-form-btn"><Link to='/myLogs'>Add</Link></button>

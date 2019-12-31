@@ -16,7 +16,7 @@ class ALog extends Component {
 
     render() {      // turn rating into stars !! 
         // const { logs=[] } = this.context;
-        const { title, info, ordered, rating, date, eatery} = this.props;
+        const { title, info, ordered, rating, date, image, image_alt, eatery} = this.props;
         // console.log(this.props);
 
         return(
@@ -35,6 +35,8 @@ class ALog extends Component {
                 <blockquote>
                     {info}
                 </blockquote>
+
+                <img alt={image_alt} src={image} />
 
                 <div className="edit-delete-btns">
                     <button className="edit-log-btn">

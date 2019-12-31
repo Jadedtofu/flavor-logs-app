@@ -18,7 +18,7 @@ class MyLogs extends Component {
     static contextType = ApiContext;
 
     render() { 
-        const { eateries=[], logs=[] } = this.context;
+        const { eateries=[], flavorLogs=[] } = this.context;
 
         const getEateriesForLog = (eateries=[], eateryId) => (
             (!eateryId) 
@@ -27,21 +27,21 @@ class MyLogs extends Component {
         );
         // console.log(getEateriesForLog(eateries, 3));
         // returns array of eatery objects, each within one array:
-        let tempEateryNames = logs.map(log => getEateriesForLog(eateries, log.eatery_id));
+        let tempEateryNames = flavorLogs.map(flavorLog => getEateriesForLog(eateries, flavorLog.eatery_id));
         // console.log(tempEateryNames);
         // flattens eateries into array of objects:
         let eateryNames = [].concat.apply([], tempEateryNames);
         // console.log(eateryNames);
 
         // adds EateryNames into logs: (mutates the logs object)
-        for (let i = 0, max = logs.length; i < max; i++) {
+        for (let i = 0, max = flavorLogs.length; i < max; i++) {
             for (let j = 0, max2 = eateryNames.length; j < max2; j++) {
-                if(logs[i].eatery_id === eateryNames[j].id) {
-                    logs[i].eateryName = eateryNames[j].name;
+                if(flavorLogs[i].eatery_id === eateryNames[j].id) {
+                    flavorLogs[i].eateryName = eateryNames[j].name;
                 }
             }
         }
-        console.log(logs);
+        console.log(flavorLogs);
 
         // // sorting logic: actually sorts the log data and changes the render:
         // // implement switch case for these? ?? 
@@ -53,15 +53,17 @@ class MyLogs extends Component {
         // logs.sort((a, b) => (a.rating > b.rating) ? -1: 1); // sorts by rating
 
         // rendering all logs
-        const logMapped = logs.map(log => 
-            <ALog key={log.id}
-                  id={log.id}
-                  title={log.title}
-                  info={log.info}
-                  ordered={log.ordered}
-                  rating={log.rating}
-                  date={log.date}
-                  eatery={log.eateryName}
+        const logMapped = flavorLogs.map(flavorLog => 
+            <ALog key={flavorLog.id}
+                  id={flavorLog.id}
+                  title={flavorLog.title}
+                  info={flavorLog.info}
+                  ordered={flavorLog.ordered}
+                  rating={flavorLog.rating}
+                  date={flavorLog.date}
+                  image={flavorLog.image_link}
+                  image_alt={flavorLog.image_alt}
+                  eatery={flavorLog.eateryName}
             />
         );
 
