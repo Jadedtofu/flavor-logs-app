@@ -14,90 +14,6 @@ import ApiContext from './ApiContext';
 import config from './config';
 
 class App extends Component {
-  // state = {
-  //   eateries: [
-  //     {
-  //       id: 1, 
-  //       name: "Pho Mignon", 
-  //       phone: "760-320-5210", 
-  //       address: "1235 North Island Street, San Diego, CA 92108", 
-  //       notes: "Open M-F 9 am - 9 pm, Sat 9 am - 11 pm, Sun 10 am - 8 pm"
-  //     },
-  //     {
-  //       id: 2, 
-  //       name: "200° Bakery", 
-  //       phone: "619-280-7599", 
-  //       address: "8590 Elm Wake Drive, San Diego, CA 92123", 
-  //       notes: "Open M-F 7 am - 5 pm, Sat 7 am - 8 pm, Sun 9 am - 3 pm"
-  //     },
-  //     {
-  //       id: 3, 
-  //       name: "Mana Noodlehouse", 
-  //       phone: "858-780-2323", 
-  //       address: "590 Convoy Street, San Diego, CA 92117", 
-  //       notes: "Open M-F 11 am - 9 pm, Sat 11 am - 12 am, Sun 11 am - 6 pm"
-  //     }
-  //   ],
-
-  //   flavorLogs: [
-  //     {
-  //       id: 1, 
-  //       title: "Best pho in town", 
-  //       info: "The broth is clear, flavorful, and not greasy at all! The rare steak was not overcooked; the flank was tender. The noodles were soft, but not too soft to break apart with chopsticks. Will go here again!",
-  //       ordered: "P13 - Rare Steak and Flank Beef Noodle Soup", 
-  //       rating: 5, 
-  //       date: "2019-11-10", 
-  //       image_link: "",
-  //       image_alt: "",
-  //       eatery_id: 1
-  //     },
-  //     {
-  //       id: 2, 
-  //       title: "Softest bread", 
-  //       info: "The lines were a little long, but worth it. Softest bread roll to start the day. The aroma was perfect, resembling a nice cup of freshly brewed coffee, and the flavor was not overbearing", 
-  //       ordered: "Morning Coffee Roll", 
-  //       rating: 4, 
-  //       date: "2019-09-05", 
-  //       image_link: "https://i.imgur.com/K2yhmFe.jpg",
-  //       image_alt: "Coffee Bread Roll next to cup of Latte",
-  //       eatery_id: 2
-  //     },
-  //     {
-  //       id: 3, 
-  //       title: "Local Homemade Noodles", 
-  //       info: "First time visiting this place. The noodles were definitely home made, but not of a very consistent shape. They tasted okay, but the broth was a little greasy and there weren't a lot of side dish selections. Might try again later to see if they improve over time.",
-  //       ordered: "Chicken & Noodles with Leek",
-  //       rating: 3,
-  //       date: "2019-07-05",
-  //       image_link: "",
-  //       image_alt: "",
-  //       eatery_id: 3
-  //     },
-  //     {
-  //       id: 4, 
-  //       title: "Fluffy cake", 
-  //       info: "Usually the go-to is bread, but wanted to give the cakes a try. The Peach Fluff caught my eye. The colors were pleasant, and there were small decorative, edible peaches on top. It wasn't overly sweet, but was sweet enough. The cake feels like it melts when eaten, moist and soft, very fluffy like peach cotton candy.",
-  //       ordered: "Peach Fluff Layered Cake",
-  //       rating: 5,
-  //       date: "2019-12-10",
-  //       image_link: "",
-  //       image_alt: "",
-  //       eatery_id: 2
-  //     },
-  //     {
-  //       id: 5, 
-  //       title: "Smooth noodles", 
-  //       info: "Tried to eat their noodles again later. The broth and noodle quality improved quite a lot. They're a more consistent shape now and the broth is less greasy. The meat and vegetable ratio was really nice as well. Great aroma.",
-  //       ordered: "Lamb Noodle Broth with Chives and Mushrooms",
-  //       rating: 4,
-  //       date: "2019-11-09",
-  //       image_link: "",
-  //       image_alt: "",
-  //       eatery_id: 3
-  //     },
-  //   ]
-  // };
-
   state = {
     eateries: [],
     flavorLogs: []
@@ -128,16 +44,68 @@ class App extends Component {
     });
   }
 
+  handleAddEatery = eatery => {
+    this.setState({
+      eateries: [
+        ...this.state.eateries,
+        eatery
+      ]
+    });
+  }
+
+  // unsure if this is working properly:
+  handleEditEatery = eatery_id => {
+    const updatedEateries = this.state.eateries.map(item => {
+      if(item.id === eatery_id) {
+        return { ...item, name: name, phone: phone, address: address, notes: notes}
+      }
+      return item;
+    });
+    this.setState({ eateries: updatedEateries});
+  }
+
+  handleDeleteEatery = eatery_id => {
+    this.setState({
+      eateries: this.state.eateries.filter(eatery => eatery.id !== eatery_id)
+    });
+  }
+
+  handleAddLog = flavorLog => {
+    this.setState({
+      flavorLogs: [
+        ...this.state.flavorLogs,
+        flavorLog
+      ]
+    });
+  }
+
+  // unsure if this is working properly:
+  handleEditLog = flavorLog_id => {
+    const updatedLogs = this.state.flavorLogs.map(item => {
+      if (item.id === flavorLog_id) {
+        return { ...item, title: title, info: info, ordered: ordered, rating: rating, date: date, image_link: image_link, image_alt: image_alt, eatery_id: eatery_id }
+      }
+      return item;
+    });
+    this.setState({ flavorLogs: updatedLogs});
+  }
+
+  handleDeleteLog = flavorLog_id => {
+    this.setState({
+      flavorLogs: this.state.flavorLogs.filter(flavorLog => flavorLog.id !== flavorLog_id)
+    });
+  }
+
   render() {
     const value={
       eateries: this.state.eateries,
       flavorLogs: this.state.flavorLogs,
-      // addEatery: this.state.handleAddEatery,
-      // editEatery: this.state.handleEditEatery,
-      // deleteEatery: this.state.handleDeleteEatery,
-      // addLog: this.state.handleAddLog,
-      // editLog: this.state.handleEditLog,
-      // deleteLog: this.state.handleDeleteLog
+      addEatery: this.state.handleAddEatery,
+      editEatery: this.state.handleEditEatery,
+      deleteEatery: this.state.handleDeleteEatery,
+      addLog: this.state.handleAddLog,
+      editLog: this.state.handleEditLog,
+      deleteLog: this.state.handleDeleteLog
     }
     // console.log(value);
 
