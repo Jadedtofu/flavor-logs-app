@@ -3,16 +3,46 @@ import './ALog.css';
 import Rating from '../Rating/Rating';
 import { Link } from 'react-router-dom';
 import ApiContext from '../ApiContext';
-// import config from '../config';
+import config from '../config';
 
 class ALog extends Component {
     static defaultProps = {
         match: {
           params: {}
         },
+
+        history: {
+            push: () => { }
+        },
+
+        onDeleteLog: () => {}
     }
 
     static contextType = ApiContext;
+
+    handleClickDeleteLog = e => {
+        e.preventDefault();
+        const flavorLog_id = this.props.id;
+
+        fetch(`${config.API_ENDPOINT}/flavorLogs/${flavorLog_id}`, {
+            method: `DELETE`,
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+        .then(res => {
+            if(!res.ok) {
+                return res.json().then(e => Promise.reject(e))
+            }
+        })
+        .then(() => {
+            this.context.deleteLog(flavorLog_id)
+            this.props.onDeleteLog(flavorLog_id)
+        })
+        .catch(error => {
+            console.error({ error })
+        });
+    }
 
     render() {      // turn rating into stars !! 
         // const { logs=[] } = this.context;
@@ -42,7 +72,9 @@ class ALog extends Component {
                     <button className="edit-log-btn">
                         <Link to='/editLog'><i className="fas fa-pencil-alt"></i></Link>
                     </button>
-                    <button className="delete-log-btn"><i className="fas fa-trash-alt"></i></button>
+                    <button className="delete-log-btn"
+                      onClick={this.handleClickDeleteLog}>
+                        <i className="fas fa-trash-alt"></i></button>
                 </div>
             </section>
         );

@@ -21,7 +21,7 @@ class MyLogs extends Component {
         this.props.history.push('/myLogs');
     }
 
-    handleEditLog = () => {
+    handleEditLog = () => {  // not sure this goes here
         this.props.history.push('/myLogs');
     }
 
