@@ -17,6 +17,14 @@ class MyLogs extends Component {
 
     static contextType = ApiContext;
 
+    handleDeleteLog = () => {
+        this.props.history.push('/myLogs');
+    }
+
+    handleEditLog = () => {
+        this.props.history.push('/myLogs');
+    }
+
     render() { 
         const { eateries=[], flavorLogs=[] } = this.context;
 
@@ -64,6 +72,8 @@ class MyLogs extends Component {
                   image={flavorLog.image_link}
                   image_alt={flavorLog.image_alt}
                   eatery={flavorLog.eateryName}
+                  onDeleteLog={this.handleDeleteLog}
+                  onEditLog={this.handleEditLog}
             />
         );
 

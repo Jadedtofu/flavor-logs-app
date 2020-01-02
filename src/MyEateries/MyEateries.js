@@ -18,6 +18,14 @@ class MyEateries extends Component {
 
     static contextType = ApiContext;
 
+    handleDeleteEatery = () => {
+        this.props.history.push('/myEateries');
+    }
+
+    handleEditEatery = () => {
+        this.props.history.push('/myEateries');
+    }
+
     render() {
         const { eateries=[] } = this.context;
 
@@ -27,7 +35,10 @@ class MyEateries extends Component {
                     name={eatery.name}
                     phone={eatery.phone}
                     address={eatery.address}
-                    notes={eatery.notes} />
+                    notes={eatery.notes} 
+                    onDeleteEatery={this.handleDeleteEatery}
+                    onEditEatery={this.handleEditEatery}
+                />
         );
 
         return(

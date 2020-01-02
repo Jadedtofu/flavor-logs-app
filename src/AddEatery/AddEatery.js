@@ -2,14 +2,90 @@ import React, { Component } from 'react';
 import ShareForm from '../ShareForm/ShareForm';
 import './AddEatery.css';
 import { Link } from 'react-router-dom';
-// import ApiContext from '../ApiContext';
-// import config from '../config';
+import ValidationError from '../ValidationError/ValidationError';
+import ApiContext from '../ApiContext';
+import config from '../config';
 
 class AddEatery extends Component {
     static defaultProps = {
         history: {
             push: () => { }
         }
+    }
+
+    constructor(props) {  // validation is only for Eatery Name as req'd field
+        super(props);
+        this.state = {
+            eateryName: '',
+            eateryNameValid: false,
+            formValid: false,
+            validationMessages: {
+                eateryNameName: '',
+            }
+        }
+    }
+
+    addEateryName(eateryName) {
+        this.setState({eateryName}, () => {this.validateEateryName(eateryName)});
+    }
+
+    validateEateryName(fieldValue) {
+        const fieldErrors = {...this.state.validationMessages};
+        let hasError = false;
+
+        fieldValue = fieldValue.trim();
+        if(fieldValue.length === 0) {
+            fieldErrors.eateryNameName = 'Please type a name for this eatery';
+            hasError = true;
+        }
+
+        this.setState({
+            validationMessages: fieldErrors,
+            eateryNameValid: !hasError
+        }, this.formValid);
+    }
+
+    formValid() {
+        this.setState({
+            formValid: this.state.eateryNameValid
+        });
+    }
+
+    static contextType = ApiContext;
+
+    // adds eatery:
+    handleSubmit = e => {
+        e.preventDefault();
+        const eatery = {
+            name: e.target['eatery-name'].value,
+            phone: e.target['eatery-phone'].value,
+            address: e.target['eatery-address'].value,
+            notes: e.target['eatery-notes'].value
+        }
+
+        fetch(`${config.API_ENDPOINT}/eateries`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(eatery)
+        })
+        // .then(res => {
+        //     console.log(eatery)
+        // })
+        .then(res => {
+            if(!res.ok) {
+                return res.json().then(e => Promise.reject(e))
+            }
+            return res.json();
+        })
+        .then(eatery => {
+            this.context.addEatery(eatery);
+            this.props.history.push('/MyEateries');
+        })
+        .catch(error => {
+            console.error({error})
+        });
     }
 
     render() {
@@ -19,10 +95,13 @@ class AddEatery extends Component {
                     <h1 className="add-eatery-text">Add a Eatery</h1>
                 </header>
 
-                <ShareForm>
+                <ShareForm onSubmit={this.handleSubmit}>
                     <div className="field">
-                        <label htmlFor="eatery-name">Eatery</label>
-                        <input type="text" name="eatery-name" placeholder="Pho Mignon" required />
+                        <label htmlFor="eatery-name">Eatery *</label>
+                        <input type="text" name="eatery-name" placeholder="Pho Mignon" required
+                          onChange={e => this.addEateryName(e.target.value)} />
+                        <ValidationError hasError={!this.state.eateryNameValid}
+                          message={this.state.validationMessages.eateryNameName} />
                     </div>
 
                     <div className="field">
@@ -42,9 +121,13 @@ class AddEatery extends Component {
 
                     <div className="buttons">
                         <button type="submit" className="add-eatery-back-btn"><Link to='/myEateries'>Back</Link></button>
-                        <button type="submit" className="add-eatery-form-btn"><Link to='/myEateries'>Add</Link></button>
+                        <button type="submit" className="add-eatery-form-btn" disabled={!this.state.formValid}>Add</button>
                     </div>
+
                 </ShareForm>
+                <section>
+                    <p className="required-field">* Required field</p>
+                </section>
             </main>
         );
     }
