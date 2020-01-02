@@ -18,7 +18,7 @@ class MyEateries extends Component {
 
     static contextType = ApiContext;
 
-    handleDeleteEatery = () => {
+    handleDeleteEatery = () => {  // not sure if this goes here
         this.props.history.push('/myEateries');
     }
 
@@ -51,15 +51,12 @@ class MyEateries extends Component {
                 <SearchBox />
             </section> */}
 
-            <section>
-                <button className="add-eatery-btn"><Link to='/addEatery'>Add an Eatery</Link></button>
-            </section>
-
             {eateryMapped}
 
             <section>
+                <button className="add-eatery-btn"><Link to='/addEatery'>Add an Eatery</Link></button>
                 <p>* Disclaimer: Deleting a eatery will delete ALL logs associated with that eatery</p>
-            </section>    
+            </section>
         </main>
         );
     }

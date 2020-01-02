@@ -61,7 +61,7 @@ class MyLogs extends Component {
         // logs.sort((a, b) => (a.rating > b.rating) ? -1: 1); // sorts by rating
 
         // rendering all logs
-        const logMapped = flavorLogs.map(flavorLog => 
+        const logsMapped = flavorLogs.map(flavorLog => 
             <ALog key={flavorLog.id}
                   id={flavorLog.id}
                   title={flavorLog.title}
@@ -83,7 +83,7 @@ class MyLogs extends Component {
                     <h1 className="my-logs-title">My Logs</h1>
                 </header>
 
-                <section className="sort-add">
+                <section className="sort-section">
                     <div className="sortby">
                         <select className="sortby-options">
                             <option value="default">Sort by All</option>
@@ -93,10 +93,13 @@ class MyLogs extends Component {
                             <option value="rating">Sort by Rating</option>
                         </select>
                     </div>
-                    <button className="add-log-btn"><Link to='/addLog'>Add a log</Link></button>
                 </section>
 
-                {logMapped}
+                {logsMapped}
+
+                <section className="add-log-section">
+                    <button className="add-log-btn"><Link to='/addLog'>Add a log</Link></button>
+                </section>
 
             </main>
         );

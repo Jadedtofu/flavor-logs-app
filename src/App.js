@@ -160,7 +160,7 @@ class App extends Component {
         />
 
         <Route
-          path='/editLog'
+          path='/editLog/:flavorLog_id'
           component={EditLog}
         />
 
@@ -175,7 +175,7 @@ class App extends Component {
         />
 
         <Route
-          path='/editEatery'
+          path='/editEatery/:eatery_id'
           component={EditEatery}
         />
 

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import ShareForm from '../ShareForm/ShareForm';
 import './EditEatery.css';
 import { Link } from 'react-router-dom';
-// import ApiContext from '../ApiContext';
-// import config from '../config';
+import ApiContext from '../ApiContext';
+import config from '../config';
 
 class EditEatery extends Component {
     static defaultProps = {
@@ -12,7 +12,16 @@ class EditEatery extends Component {
         }
     }
 
+    static contextType = ApiContext;
+
+    // handleSubmit(e, id) {
+    //     e.preventDefault();
+    // }
+
     render() {
+        const { eateries=[] } = this.context;
+        // need to update the values inside each input to be from the corresponding eatery id
+
         return (
             <main className="edit-eatery-page" role="main">
                 <header className="edit-eatery-header" role="banner">

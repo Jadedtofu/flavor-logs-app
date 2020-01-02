@@ -46,7 +46,7 @@ class ALog extends Component {
 
     render() {      // turn rating into stars !! 
         // const { logs=[] } = this.context;
-        const { title, info, ordered, rating, date, image, image_alt, eatery} = this.props;
+        const { id, title, info, ordered, rating, date, image, image_alt, eatery} = this.props;
         // console.log(this.props);
 
         return(
@@ -70,11 +70,12 @@ class ALog extends Component {
 
                 <div className="edit-delete-btns">
                     <button className="edit-log-btn">
-                        <Link to='/editLog'><i className="fas fa-pencil-alt"></i></Link>
+                        <Link to={`/editLog/${id}`}><i className="fas fa-pencil-alt"></i></Link>
                     </button>
                     <button className="delete-log-btn"
                       onClick={this.handleClickDeleteLog}>
-                        <i className="fas fa-trash-alt"></i></button>
+                        <i className="fas fa-trash-alt"></i>
+                    </button>
                 </div>
             </section>
         );
