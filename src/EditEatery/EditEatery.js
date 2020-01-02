@@ -16,7 +16,7 @@ class EditEatery extends Component {
         return (
             <main className="edit-eatery-page" role="main">
                 <header className="edit-eatery-header" role="banner">
-                    <h1 className="edit-eatery-text">Edit a Eatery</h1>
+                    <h1 className="edit-eatery-text">Edit an Eatery</h1>
                 </header>
 
                 <ShareForm>

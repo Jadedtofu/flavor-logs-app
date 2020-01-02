@@ -81,7 +81,7 @@ class AddEatery extends Component {
         })
         .then(eatery => {
             this.context.addEatery(eatery);
-            this.props.history.push('/MyEateries');
+            this.props.history.push('/myEateries');
         })
         .catch(error => {
             console.error({error})
@@ -92,7 +92,7 @@ class AddEatery extends Component {
         return (
             <main className="add-eatery-page" role="main">
                 <header className="add-eatery-header" role="banner">
-                    <h1 className="add-eatery-text">Add a Eatery</h1>
+                    <h1 className="add-eatery-text">Add an Eatery</h1>
                 </header>
 
                 <ShareForm onSubmit={this.handleSubmit}>

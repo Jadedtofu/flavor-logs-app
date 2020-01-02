@@ -52,7 +52,7 @@ class MyEateries extends Component {
             </section> */}
 
             <section>
-                <button className="add-eatery-btn"><Link to='/addEatery'>Add a Eatery</Link></button>
+                <button className="add-eatery-btn"><Link to='/addEatery'>Add an Eatery</Link></button>
             </section>
 
             {eateryMapped}

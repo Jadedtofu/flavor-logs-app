@@ -8,5 +8,5 @@ export default React.createContext({
     deleteEatery: () => {},
     addLog: () => {},
     editLog: () => {},
-    dedleteLog: () => {}
+    deleteLog: () => {}
 });

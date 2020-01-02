@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import ShareForm from '../ShareForm/ShareForm';
 import './AddLog.css';
 import { Link } from 'react-router-dom';
-// import ApiContext from '../ApiContext';
-// import config from '../config';
+import ValidationError from '../ValidationError/ValidationError';
+import ApiContext from '../ApiContext';
+import config from '../config';
 
 class AddLog extends Component {
     static defaultProps = {
@@ -12,46 +13,183 @@ class AddLog extends Component {
         }
     }
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            flavorLogTitle: '',
+            flavorLogEatery: '',
+            flavorLogInfo: '',
+            flavorLogTitleValid: false,
+            flavorLogEateryValid: false,
+            flavorLogInfoValid: false,
+            formValid: false,
+            validationMessages: {
+                flavorLogTitleTitle: '',
+                flavorLogEateryName: '',
+                flavorLogLogInfo: '',
+            }
+        }
+    }
+
+    addFlavorLogTitle(flavorLogTitle) {
+        this.setState({flavorLogTitle}, () => {this.validateFlavorLogTitle(flavorLogTitle)});
+    }
+
+    addFlavorLogEatery(flavorLogEatery) {
+        this.setState({flavorLogEatery}, () => {this.validateFlavorLogEatery(flavorLogEatery)});
+    }
+
+    addFlavorLogInfo(flavorLogInfo) {
+        this.setState({flavorLogInfo}, () => {this.validateFlavorLogInfo(flavorLogInfo)});
+    }
+
+    validateFlavorLogTitle(fieldValue) {
+        const fieldErrors = {...this.state.validationMessages};
+        let hasError = false;
+
+        fieldValue = fieldValue.trim();
+        if(fieldValue.length === 0) {
+            fieldErrors.flavorLogTitleTitle = 'Please type a title for this Flavor Log';
+            hasError = true;
+        }
+
+        this.setState({
+            validationMessages: fieldErrors,
+            flavorLogTitleValid: !hasError
+        }, this.formValid);
+    }
+
+    validateFlavorLogEatery(fieldValue) {
+        const fieldErrors = {...this.state.validationMessages};
+        let hasError = false;
+
+        if(fieldValue === "empty") {
+            fieldErrors.flavorLogEateryName = 'Please select an eatery';
+            hasError = true;
+        }
+
+        this.setState({
+            validationMessages: fieldErrors,
+            flavorLogEateryValid: !hasError
+        }, this.formValid);
+    }
+
+    validateFlavorLogInfo(fieldValue) {
+        const fieldErrors = {...this.state.validationMessages};
+        let hasError = false;
+
+        if(fieldValue.length === 0) {
+            fieldErrors.flavorLogLogInfo = 'Please type some details for this Flavor Log';
+            hasError = true;
+        }
+
+        this.setState({
+            validationMessages: fieldErrors,
+            flavorLogInfoValid: !hasError
+        }, this.formValid);
+    }
+
+    formValid() {
+        this.setState({
+            formValid: this.state.flavorLogTitleValid && this.state.flavorLogEateryValid && this.state.flavorLogInfoValid
+        });
+    }
+
+    static contextType = ApiContext;
+
+    handleSubmit = e => {
+        e.preventDefault();
+        const flavorlog = {
+            title: e.target['log-title'].value,
+            info: e.target['log-info'].value,
+            ordered: e.target['log-ordered'].value,
+            rating: e.target['log-rating'].value,
+            date: e.target['log-date'].value,
+            image_link: e.target['image-link'].value,
+            image_alt: e.target['image-alt'].value,
+            eatery_id: e.target['eatery-id'].value
+        }
+
+        fetch(`${config.API_ENDPOINT}/flavorLogs`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(flavorlog)
+        })
+        // .then(res => {
+        //     console.log(flavorlog)
+        // })
+        .then(res => {
+            if(!res.ok) {
+                return res.json().then(e => Promise.reject(e));
+            }
+            return res.json()
+        })
+        .then(flavorlog => {
+            this.context.addLog(flavorlog);
+            this.props.history.push('/myLogs');
+        })
+        .catch(error => {
+            console.error({ error });
+        });
+    }
+
     render() {
+        const { eateries=[] } = this.context;
+
         return(
             <main className="add-log-page" role="main">
                 <header className="add-log-header" role="banner">
                     <h1 className="add-log-text">Add a Log</h1>
                 </header>
 
-                <ShareForm>
+                <ShareForm onSubmit={this.handleSubmit}>
                     <div className="field">
-                        <label htmlFor="log-title">Log Title</label>
-                        <input type="text" name="log-title" placeholder="Best pho in town" required />
+                        <label htmlFor="log-title">Log Title *</label>
+                        <input type="text" name="log-title" placeholder="Best pho in town" required
+                          onChange={e => this.addFlavorLogTitle(e.target.value)} />
+                          <ValidationError hasError={!this.state.flavorLogTitleValid}
+                            message={this.state.validationMessages.flavorLogTitleTitle} />
                     </div>
 
                     <div className="field">
-                    <label htmlFor="eatery-select">Select a Eatery</label>
-                    <select name="eatery-name">
-                        <option value="eatery-1">Pho Mignon</option>
-                        <option value="eatery-2">200° Bakery</option>
-                        <option value="eatery-3">Mana Noodlehouse</option>
+                    <label htmlFor="eatery-select-text">Select a Eatery</label>
+                    <select className="eatery-select" id="eatery-input" name="eatery-id"
+                      onChange={e => this.addFlavorLogEatery(e.target.value)} >
+                        <option className="options" value="empty">...</option>
+                        {eateries.map(eatery =>
+                            <option key={eatery.id} value={eatery.id}>
+                                {eatery.name}
+                            </option>
+                        )}
                     </select>
+                    <ValidationError hasError={!this.state.flavorLogEateryValid}
+                      message={this.state.validationMessages.flavorLogEateryName} />
                     </div>
 
                     <div className="field">
-                        <label htmlFor="item-ordered">Item(s) Ordered</label>
-                        <textarea name="item-ordered" rows="3" placeholder="P13 - Rare Steak and Flank beef Noodle Soup" required></textarea>
+                        <label htmlFor="log-ordered">Item(s) Ordered</label>
+                        <textarea name="log-ordered" rows="3" placeholder="P13 - Rare Steak and Flank beef Noodle Soup"></textarea>
                     </div>
 
                     <div className="field">
                         <label htmlFor="rating">Rating</label>
-                        <input type="number" name="rating" id="rating" defaultValue="1" min="1" max="5" required />    
+                        <input type="number" name="log-rating" id="rating" defaultValue="3" min="1" max="5" />    
                     </div>
 
                     <div className="field">
                         <label htmlFor="eaten-date">Last Eaten Date</label>
-                        <input type="date" name="eaten-date" id="eaten-date" defaultValue="2019-12-24" min="1980-01-01" required />
+                        <input type="date" name="log-date" id="eaten-date" defaultValue="2020-01-01"
+                         min="1980-01-01"/>
                     </div>
 
                     <div className="field">
-                        <label htmlFor="log-notes">Log Details</label>
-                        <textarea name="log-notes" rows="6" placeholder="The broth is clear, flavorful, and not greasy at all! The rare steak was not overcooked; the flank was tender. The noodles were soft, but not too soft to break apart with chopsticks. Will go here again!"></textarea>
+                        <label htmlFor="log-info">Log Details *</label>
+                        <textarea name="log-info" rows="6" placeholder="The broth is clear, flavorful, and not greasy at all! The rare steak was not overcooked; the flank was tender. The noodles were soft, but not too soft to break apart with chopsticks. Will go here again!"
+                          onChange={e => this.addFlavorLogInfo(e.target.value)} />
+                          <ValidationError hasError={!this.state.flavorLogInfoValid}
+                            message={this.state.validationMessages.flavorLogLogInfo} />
                     </div>
 
                     <div className="field">
@@ -66,9 +204,13 @@ class AddLog extends Component {
 
                     <div className="buttons">
                         <button type="submit" className="add-log-back-btn"><Link to='/myLogs'>Back</Link></button>
-                        <button type="submit" className="add-log-form-btn"><Link to='/myLogs'>Add</Link></button>
+                        <button type="submit" className="add-log-form-btn" disabled={!this.state.formValid}>Add</button>
                     </div>
                 </ShareForm>
+
+                <section>
+                    <p className="required-fields">* Required fields</p>
+                </section>
             </main>
         );
     }

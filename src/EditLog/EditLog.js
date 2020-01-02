@@ -26,8 +26,8 @@ class EditLog extends Component {
                     </div>
 
                     <div className="field">
-                    <label htmlFor="eatery-select">Select a Eatery</label>
-                    <select name="eatery-name">
+                    <label htmlFor="eatery-select-text">Select a Eatery</label>
+                    <select className="eatery-select" id="eatery-input" name="eatery-id">
                         <option value="eatery-1">Pho Mignon</option>
                         <option value="eatery-2">200° Bakery</option>
                         <option value="eatery-3">Mana Noodlehouse</option>
@@ -35,23 +35,24 @@ class EditLog extends Component {
                     </div>
 
                     <div className="field">
-                        <label htmlFor="item-ordered">Item(s) Ordered</label>
-                        <textarea name="item-ordered" rows="3" defaultValue="P13 - Rare Steak and Flank beef Noodle Soup" required></textarea>
+                        <label htmlFor="log-ordered">Item(s) Ordered</label>
+                        <textarea name="log-ordered" rows="3" defaultValue="P13 - Rare Steak and Flank beef Noodle Soup"></textarea>
                     </div>
 
                     <div className="field">
                         <label htmlFor="rating">Rating</label>
-                        <input type="number" name="rating" id="rating" defaultValue="1" min="1" max="5" required />    
+                        <input type="number" name="log-rating" id="rating" defaultValue="1" min="1" max="5" />    
                     </div>
 
                     <div className="field">
-                        <label htmlFor="eaten-date">Last Eaten Date</label>
-                        <input type="date" name="eaten-date" id="eaten-date" defaultValue="2019-12-24" min="1980-01-01" required />
+                        <label htmlFor="log-date">Last Eaten Date</label>
+                        <input type="date" name="eaten-date" id="eaten-date" defaultValue="2020-01-01" 
+                         min="1980-01-01"/>
                     </div>
 
                     <div className="field">
-                        <label htmlFor="log-notes">Log Details</label>
-                        <textarea name="log-notes" rows="6" defaultValue="The broth is clear, flavorful, and not greasy at all! The rare steak was not overcooked; the flank was tender. The noodles were soft, but not too soft to break apart with chopsticks. Will go here again!" />
+                        <label htmlFor="log-info">Log Details</label>
+                        <textarea name="log-info" rows="6" defaultValue="The broth is clear, flavorful, and not greasy at all! The rare steak was not overcooked; the flank was tender. The noodles were soft, but not too soft to break apart with chopsticks. Will go here again!" />
                     </div>
 
                     <div className="field">
