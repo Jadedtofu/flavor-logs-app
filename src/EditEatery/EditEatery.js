@@ -22,17 +22,21 @@ class EditEatery extends Component {
         const { eateries=[] } = this.context;
         console.log(this.context.eateries);
         // need to update the values inside each input to be from the corresponding eatery id
-        const eateryId = this.props.match.params.eatery_id;
-        console.log(eateryId);
+        const eatery_id = this.props.match.params.eatery_id;
+        console.log(eatery_id);
 
-        let eateryToEdit = eateries.find(eatery => eatery.id.toString() === eateryId.toString());
-        console.log(eateryToEdit); // this is considered undefined if I try to find its property values
+        let eateryToEdit = eateries.find(eatery => eatery.id.toString() === eatery_id.toString()); // this only works if I use .toString() or the id#
+        console.log(eateryToEdit); 
         
+        // let eateryId = null;
         let eateryName = '';
         let eateryPhone = '';
         let eateryAddress = '';
         let eateryNotes = '';
         for (let key in eateryToEdit) {
+            // if(key === 'id') {
+            //     eateryId = eateryToEdit[key];
+            // }
             if (key === 'name') {
                 eateryName = eateryToEdit[key];
             }
@@ -45,6 +49,7 @@ class EditEatery extends Component {
             if (key === 'notes') {
                 eateryNotes = eateryToEdit[key];
             }
+            // console.log(eateryId);
             // console.log(eateryName);
             // console.log(eateryPhone);
             // console.log(eateryAddress);

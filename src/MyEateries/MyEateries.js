@@ -70,10 +70,6 @@ class MyEateries extends Component {
                 <h1 className="my-eateries-title" >My Eateries</h1>
             </header>
 
-            {/* <section className="searchby">
-                <SearchBox />
-            </section> */}
-
             {/* <button onClick={this.handleClickMyLogs}>Refresh Logs</button> */}
 
             {eateryMapped}

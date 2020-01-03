@@ -2,17 +2,35 @@ import React, { Component } from 'react';
 import ShareForm from '../ShareForm/ShareForm';
 import './EditLog.css'
 import { Link } from 'react-router-dom';
-// import ApiContext from '../ApiContext';
+import ApiContext from '../ApiContext';
 // import config from '../config';
 
 class EditLog extends Component {
     static defaultProps = {
         history: {
             push: () => { }
+        },
+
+        match: {
+            params: {}
         }
     }
 
+    static contextType = ApiContext;
+
     render() {
+        const { flavorLogs=[] }  = this.context;
+        console.log(this.context.flavorLogs);
+
+        const flavorLog_id = this.props.match.params.flavorLog_id;
+        console.log(flavorLog_id);
+
+        let flavorLogToEdit = flavorLogs.find(flavorLog => flavorLog.id.toString() === flavorLog_id.toString()); // this only works if I use .toString() or the id#
+        console.log(flavorLogToEdit);
+
+
+
+
         return(
             <main className="edit-log-page" role="main">
                 <header className="edit-log-header" role="banner">
