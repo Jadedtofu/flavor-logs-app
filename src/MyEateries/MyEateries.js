@@ -3,7 +3,7 @@ import './MyEateries.css';
 import { Link } from 'react-router-dom';
 import ApiContext from '../ApiContext';
 import Eatery from '../Eatery/Eatery';
-// import SearchBox from '../SearchBox/SearchBox';
+import config from '../config';
 
 class MyEateries extends Component {
     static defaultProps = {
@@ -20,11 +20,34 @@ class MyEateries extends Component {
 
     handleDeleteEatery = () => {  // not sure if this goes here
         this.props.history.push('/myEateries');
+        fetch(`${config.API_ENDPOINT}/flavorLogs`)
+        .then(flavorLogsRes => {
+            return flavorLogsRes.json();
+        })
+        .then(flavorLogs => {
+            // console.log(this.context.flavorLogs);
+            // console.log(flavorLogs);
+            this.context.flavorLogs = flavorLogs;
+            // console.log(this.context.flavorLogs);
+        });
     }
 
     handleEditEatery = () => {
         this.props.history.push('/myEateries');
     }
+
+    // handleClickMyLogs = () => {
+    //     fetch(`${config.API_ENDPOINT}/flavorLogs`)
+    //     .then(flavorLogsRes => {
+    //         return flavorLogsRes.json()
+    //     })
+    //     .then(flavorLogs => {
+    //         console.log(this.context.flavorLogs);
+    //         console.log(flavorLogs);
+    //         this.context.flavorLogs = flavorLogs;
+    //         console.log(this.context.flavorLogs);
+    //     });
+    // }
 
     render() {
         const { eateries=[] } = this.context;
@@ -50,6 +73,8 @@ class MyEateries extends Component {
             {/* <section className="searchby">
                 <SearchBox />
             </section> */}
+
+            {/* <button onClick={this.handleClickMyLogs}>Refresh Logs</button> */}
 
             {eateryMapped}
 

@@ -25,6 +25,10 @@ class MyLogs extends Component {
         this.props.history.push('/myLogs');
     }
 
+    something = () => {
+        console.log(this.context.flavorLogs);
+    }
+
     render() { 
         const { eateries=[], flavorLogs=[] } = this.context;
 

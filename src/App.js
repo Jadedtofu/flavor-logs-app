@@ -61,28 +61,28 @@ class App extends Component {
   }
 
   // unsure if this is working properly:
-  handleEditEatery = eatery => {
-    const updatedEateries = this.state.eateries.map(item => {
-      if(item.id === eatery.id) {
-        return { ...item, name: eatery.name, phone: eatery.phone, address: eatery.address, notes: eatery.notes}
-      }
-      return item;
-    });
-    this.setState({ eateries: updatedEateries});
-  }
-
-  // handleEditEatery = eatery_id => {
+  // handleEditEatery = eatery => {
   //   const updatedEateries = this.state.eateries.map(item => {
-  //     if(item.id === eatery_id) {
-  //       return {name: item.name, 
-  //               phone: item.phone, 
-  //               address: item.address, 
-  //               notes: item.notes}
-  //       }
-  //     return item; // should return updated item
+  //     if(item.id === eatery.id) {
+  //       return { ...item, name: eatery.name, phone: eatery.phone, address: eatery.address, notes: eatery.notes}
+  //     }
+  //     return item;
   //   });
-  //   this.setState({eateries: updatedEateries});
+  //   this.setState({ eateries: updatedEateries});
   // }
+
+  handleEditEatery = eatery_id => {
+    const updatedEateries = this.state.eateries.map(item => {
+      if(item.id === eatery_id) {
+        return {name: item.name, 
+                phone: item.phone, 
+                address: item.address, 
+                notes: item.notes}
+        }
+      return item; // should return updated item?
+    });
+    this.setState({eateries: updatedEateries});
+  }
 
   handleAddLog = newFlavorLog => {
     this.setState({
