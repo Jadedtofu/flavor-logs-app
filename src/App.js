@@ -138,7 +138,7 @@ class App extends Component {
       editLog: this.handleEditLog,
       deleteLog: this.handleDeleteLog
     }
-    console.log(value);
+    // console.log(value);
 
     return(    
       <ApiContext.Provider value={value}>
