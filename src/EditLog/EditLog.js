@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import ShareForm from '../ShareForm/ShareForm';
 import './EditLog.css'
 import { Link } from 'react-router-dom';
+import ValidationError from '../ValidationError/ValidationError';
 import ApiContext from '../ApiContext';
-// import config from '../config';
+import config from '../config';
 
 class EditLog extends Component {
     static defaultProps = {
@@ -14,6 +15,66 @@ class EditLog extends Component {
         match: {
             params: {}
         }
+    }
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            flavorLogTitle: '',
+            flavorLogInfo: '',
+            flavorLogTitleValid: false,
+            flavorLogInfoValid: false,
+            formValid: false,
+            validationMessages: {
+                flavorLogTitleTitle: '',
+                flavorLogLogInfo: ''
+            }
+        }
+    }
+
+    updateFlavorLogTitle(flavorLogTitle) {
+        this.setState({flavorLogTitle}, () => {this.validateFlavorLogTitle(flavorLogTitle)});
+    }
+
+    updateFlavorLogInfo(flavorLogInfo) {
+        this.setState({flavorLogInfo}, () => {this.validateFlavorLogInfo(flavorLogInfo)});
+    }
+
+    validateFlavorLogTitle(fieldValue) {
+        const fieldErrors = {...this.state.validationMessages};
+        let hasError = false;
+
+        fieldValue = fieldValue.trim();
+        if(fieldValue.length === 0) {
+            fieldErrors.flavorLogTitleTitle = 'Please type a title for this Flavor Log';
+            hasError = true;
+        }
+
+        this.setState({
+            validationMessages: fieldErrors,
+            flavorLogTitleValid: !hasError
+        }, this.formValid);
+    }
+
+    validateFlavorLogInfo(fieldValue) {
+        const fieldErrors = {...this.state.validationMessages};
+        let hasError = false;
+
+        if(fieldValue.length === 0) {
+            fieldErrors.flavorLogLogInfo = 'Please type some details for this Flavor Log';
+            hasError = true;
+        }
+
+        this.setState({
+            validationMessages: fieldErrors,
+            flavorLogInfoValid: !hasError
+        }, this.formValid);
+    }
+    
+    formValid() {
+        this.setState({
+            formValid: this.state.flavorLogTitleValid && this.state.flavorLogInfoValid
+        });
     }
 
     static contextType = ApiContext;
@@ -39,10 +100,10 @@ class EditLog extends Component {
         // getting eateryName added to flavorLogs
 
         const flavorLog_id = this.props.match.params.flavorLog_id;
-        console.log(flavorLog_id);
+        // console.log(flavorLog_id);
 
         let flavorLogToEdit = flavorLogs.find(flavorLog => flavorLog.id.toString() === flavorLog_id.toString()); // this only works if I use .toString() or the id#
-        console.log(flavorLogToEdit);
+        // console.log(flavorLogToEdit);
 
         // let flavorLogId = null;
         let flavorLogTitle = '';
@@ -88,7 +149,7 @@ class EditLog extends Component {
         }
 
         let eateriesOptions = eateries.filter(eatery => eatery.id !== flavorLogEateryId);
-        console.log(eateriesOptions);
+        // console.log(eateriesOptions);
 
         return(
             <main className="edit-log-page" role="main">
@@ -99,13 +160,16 @@ class EditLog extends Component {
                 <ShareForm>
                     <div className="field">
                         <label htmlFor="log-title">Log Title</label>
-                        <input type="text" name="log-title" defaultValue={flavorLogTitle} required />
+                        <input type="text" name="log-title" defaultValue={flavorLogTitle} required
+                          onChange={e => this.updateFlavorLogTitle(e.target.value)} />
+                          <ValidationError hasError={!this.state.flavorLogTitleValid}
+                            message={this.state.validationMessages.flavorLogTitleTitle} />
                     </div> 
 
                     <div className="field"> 
                     <label htmlFor="eatery-select-text">Select a Eatery</label>
                     <select className="eatery-select" id="eatery-input" name="eatery-id">
-                        <option value="options" value="default">{flavorLogEatery}</option>
+                        <option className="options" value="default">{flavorLogEatery}</option>
                         {eateriesOptions.map(eatery => 
                             <option key={eatery.id} value={eatery.id}>
                                 {eatery.name}
@@ -131,7 +195,10 @@ class EditLog extends Component {
 
                     <div className="field">
                         <label htmlFor="log-info">Log Details</label>
-                        <textarea name="log-info" rows="6" defaultValue={flavorLogInfo} />
+                        <textarea name="log-info" rows="6" defaultValue={flavorLogInfo}
+                          onChange={e => this.updateFlavorLogInfo(e.target.value)} />
+                          <ValidationError hasError={!this.state.flavorLogInfoValid}
+                            message={this.state.validationMessages.flavorLogLogInfo} />
                     </div>
 
                     <div className="field">
