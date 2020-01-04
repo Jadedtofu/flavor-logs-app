@@ -105,7 +105,7 @@ class EditEatery extends Component {
                     <div className="field">
                         <label htmlFor="eatery-name">Eatery</label>
                         <input type="text" name="eatery-name" defaultValue={eateryName} required 
-                            onChange={e => this.addEateryName(e.target.value)} />
+                            onChange={e => this.updateEateryName(e.target.value)} />
                           <ValidationError hasError={!this.state.eateryNameValid}
                             message={this.state.validationMessages.eateryNameName} />
                     </div>
@@ -129,7 +129,7 @@ class EditEatery extends Component {
                         <button type="submit" className="edit-eatery-back-btn"><Link to='/myEateries'>Back</Link></button>
                         <button type="submit" className="edit-eatery-form-btn" disabled={!this.state.formValid}>Edit</button>
                     </div>
-                    
+
                 </ShareForm>
             </main>
         );
