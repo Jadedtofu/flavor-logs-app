@@ -213,8 +213,9 @@ class EditLog extends Component {
 
                     <div className="buttons">
                         <button type="submit" className="edit-log-back-btn"><Link to='/myLogs'>Back</Link></button>
-                        <button type="submit" className="edit-log-form-btn"><Link to='/myLogs'>Edit</Link></button>
+                        <button type="submit" className="edit-log-form-btn" disabled={!this.state.formValid}>Edit</button>
                     </div>
+                    
                 </ShareForm>
             </main>
         );

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import ShareForm from '../ShareForm/ShareForm';
 import './EditEatery.css';
 import { Link } from 'react-router-dom';
+import ValidationError from '../ValidationError/ValidationError';
 import ApiContext from '../ApiContext';
-// import config from '../config';
+import config from '../config';
 
 class EditEatery extends Component {
     static defaultProps = {
@@ -16,17 +17,55 @@ class EditEatery extends Component {
         }
     }
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            eateryName: '',
+            eateryNameValid: false,
+            formValid: false,
+            validationMessages: {
+                eateryNameName: '',
+            }
+        }
+    }
+
+    updateEateryName(eateryName) {
+        this.setState({eateryName}, () => {this.validateEateryName(eateryName)});
+    }
+
+    validateEateryName(fieldValue) {
+        const fieldErrors = {...this.state.validationMessages};
+        let hasError = false;
+
+        fieldValue = fieldValue.trim();
+        if(fieldValue.length === 0) {
+            fieldErrors.eateryNameName = 'Please type a name for this eatery';
+            hasError = true;
+        }
+
+        this.setState({
+            validationMessages: fieldErrors,
+            eateryNameValid: !hasError
+        }, this.formValid);
+    }
+
+    formValid() {
+        this.setState({
+            formValid: this.state.eateryNameValid
+        });
+    }
+
     static contextType = ApiContext;
 
     render() {
         const { eateries=[] } = this.context;
-        console.log(this.context.eateries);
+        // console.log(this.context.eateries);
         // need to update the values inside each input to be from the corresponding eatery id
         const eatery_id = this.props.match.params.eatery_id;
-        console.log(eatery_id);
+        // console.log(eatery_id);
 
         let eateryToEdit = eateries.find(eatery => eatery.id.toString() === eatery_id.toString()); // this only works if I use .toString() or the id#
-        console.log(eateryToEdit); 
+        // console.log(eateryToEdit); 
         
         // let eateryId = null;
         let eateryName = '';
@@ -65,7 +104,10 @@ class EditEatery extends Component {
                 <ShareForm>
                     <div className="field">
                         <label htmlFor="eatery-name">Eatery</label>
-                        <input type="text" name="eatery-name" defaultValue={eateryName} required />
+                        <input type="text" name="eatery-name" defaultValue={eateryName} required 
+                            onChange={e => this.addEateryName(e.target.value)} />
+                          <ValidationError hasError={!this.state.eateryNameValid}
+                            message={this.state.validationMessages.eateryNameName} />
                     </div>
 
                     <div className="field">
@@ -85,8 +127,9 @@ class EditEatery extends Component {
 
                     <div className="buttons">
                         <button type="submit" className="edit-eatery-back-btn"><Link to='/myEateries'>Back</Link></button>
-                        <button type="submit" className="edit-eatery-form-btn"><Link to='/myEateries'>Edit</Link></button>
+                        <button type="submit" className="edit-eatery-form-btn" disabled={!this.state.formValid}>Edit</button>
                     </div>
+                    
                 </ShareForm>
             </main>
         );
