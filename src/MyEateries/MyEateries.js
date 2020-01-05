@@ -20,6 +20,7 @@ class MyEateries extends Component {
 
     handleDeleteEatery = () => {  
         this.props.history.push('/myEateries');
+        // update the logs below
         fetch(`${config.API_ENDPOINT}/flavorLogs`)
         .then(flavorLogsRes => {
             return flavorLogsRes.json();

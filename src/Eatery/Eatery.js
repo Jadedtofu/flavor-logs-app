@@ -14,8 +14,7 @@ class Eatery extends Component {
             push: () => { }
         },
 
-        onDeleteEatery: () => {},
-        onDeleteEateryLog: () => {},
+        onDeleteEatery: () => {}
     }
 
     static contextType = ApiContext;

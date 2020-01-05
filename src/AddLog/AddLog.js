@@ -128,14 +128,14 @@ class AddLog extends Component {
         })
         .then(flavorLog => {
             this.context.addLog(flavorLog);
-            // refresh the eateries after adding the flavorLog above
+            // update context to have correct eatery name if it was updated
             fetch(`${config.API_ENDPOINT}/eateries`)
             .then(eateriesRes => {
                 return eateriesRes.json();
             })
             .then(eateries => {
                 this.context.eateries = eateries;
-                console.log(this.context.eateries);
+                // console.log(this.context.eateries);
             })
             .then(() => {
                 this.props.history.push('/myLogs');

@@ -3,6 +3,7 @@ import './MyLogs.css';
 import { Link } from 'react-router-dom';
 import ApiContext from '../ApiContext';
 import ALog from '../ALog/ALog';
+import config from '../config';
 
 class MyLogs extends Component {
     static defaultProps = {
@@ -19,10 +20,14 @@ class MyLogs extends Component {
 
     handleDeleteLog = () => {
         this.props.history.push('/myLogs');
-    }
-
-    handleEditLog = () => {  // not sure this goes here
-        this.props.history.push('/myLogs');
+        // update the eateries below 
+        fetch(`${config.API_ENDPOINT}/eateries`)
+        .then(eateriesRes => {
+            return eateriesRes.json();
+        })
+        .then(eateries => {
+            this.context.eateries = eateries;
+        });
     }
 
     something = () => {
@@ -77,7 +82,6 @@ class MyLogs extends Component {
                   image_alt={flavorLog.image_alt}
                   eatery={flavorLog.eateryName}
                   onDeleteLog={this.handleDeleteLog}
-                  onEditLog={this.handleEditLog}
             />
         );
 

@@ -78,6 +78,7 @@ class EditLog extends Component {
     }
 
     static contextType = ApiContext;
+    
 
     render() {
         const { eateries=[], flavorLogs=[] }  = this.context;

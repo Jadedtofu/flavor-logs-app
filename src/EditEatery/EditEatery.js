@@ -86,6 +86,7 @@ class EditEatery extends Component {
         })
         .then(() => {
             this.context.editEatery(eatery_id);
+            // update context with the new eateries: 
             fetch(`${config.API_ENDPOINT}/eateries`)
             .then(eateriesRes => {
                 return eateriesRes.json();
@@ -94,7 +95,7 @@ class EditEatery extends Component {
                 // console.log(this.context.flavorLogs);
                 // console.log(flavorLogs);
                 this.context.eateries = eateries;
-                console.log(this.context.eateries);
+                // console.log(this.context.eateries);
             })
             .then(() => {
                 this.props.history.push('/myEateries')
