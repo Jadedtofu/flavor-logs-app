@@ -57,6 +57,54 @@ class EditEatery extends Component {
 
     static contextType = ApiContext;
 
+    handleSubmit = e => {
+        e.preventDefault();
+        const eatery_id = this.props.match.params.eatery_id;
+        console.log(eatery_id);
+
+        const eateryToUpdate = {
+            name: e.target['eatery-name'].value,
+            phone: e.target['eatery-phone'].value,
+            address: e.target['eatery-address'].value,
+            notes: e.target['eatery-notes'].value
+        }
+
+        fetch(`${config.API_ENDPOINT}/eateries/${eatery_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(eateryToUpdate)
+        })
+        // .then(res => {
+        //     console.log(eateryToUpdate)
+        // })
+        .then(res => {
+            if(!res.ok) {
+                return res.json().then(e => Promise.reject(e))
+            }
+        })
+        .then(() => {
+            this.context.editEatery(eatery_id);
+            fetch(`${config.API_ENDPOINT}/eateries`)
+            .then(eateriesRes => {
+                return eateriesRes.json();
+            })
+            .then(eateries => {
+                // console.log(this.context.flavorLogs);
+                // console.log(flavorLogs);
+                this.context.eateries = eateries;
+                console.log(this.context.eateries);
+            })
+            .then(() => {
+                this.props.history.push('/myEateries')
+            })
+        })
+        .catch(error => {
+            console.error({error})
+        })
+    }
+
     render() {
         const { eateries=[] } = this.context;
         // console.log(this.context.eateries);
@@ -101,7 +149,7 @@ class EditEatery extends Component {
                     <h1 className="edit-eatery-text">Edit an Eatery</h1>
                 </header>
 
-                <ShareForm>
+                <ShareForm onSubmit={this.handleSubmit}>
                     <div className="field">
                         <label htmlFor="eatery-name">Eatery</label>
                         <input type="text" name="eatery-name" defaultValue={eateryName} required 

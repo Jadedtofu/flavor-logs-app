@@ -18,7 +18,7 @@ class MyEateries extends Component {
 
     static contextType = ApiContext;
 
-    handleDeleteEatery = () => {  // not sure if this goes here
+    handleDeleteEatery = () => {  
         this.props.history.push('/myEateries');
         fetch(`${config.API_ENDPOINT}/flavorLogs`)
         .then(flavorLogsRes => {
@@ -32,23 +32,6 @@ class MyEateries extends Component {
         });
     }
 
-    handleEditEatery = () => {
-        this.props.history.push('/myEateries');
-    }
-
-    // handleClickMyLogs = () => {
-    //     fetch(`${config.API_ENDPOINT}/flavorLogs`)
-    //     .then(flavorLogsRes => {
-    //         return flavorLogsRes.json()
-    //     })
-    //     .then(flavorLogs => {
-    //         console.log(this.context.flavorLogs);
-    //         console.log(flavorLogs);
-    //         this.context.flavorLogs = flavorLogs;
-    //         console.log(this.context.flavorLogs);
-    //     });
-    // }
-
     render() {
         const { eateries=[] } = this.context;
 
@@ -60,7 +43,6 @@ class MyEateries extends Component {
                     address={eatery.address}
                     notes={eatery.notes} 
                     onDeleteEatery={this.handleDeleteEatery}
-                    onEditEatery={this.handleEditEatery}
                 />
         );
 
@@ -69,8 +51,6 @@ class MyEateries extends Component {
             <header className="my-eateries-header" role="banner">
                 <h1 className="my-eateries-title" >My Eateries</h1>
             </header>
-
-            {/* <button onClick={this.handleClickMyLogs}>Refresh Logs</button> */}
 
             {eateryMapped}
 

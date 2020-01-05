@@ -15,7 +15,7 @@ class Eatery extends Component {
         },
 
         onDeleteEatery: () => {},
-        onDeleteEateryLog: () => {}
+        onDeleteEateryLog: () => {},
     }
 
     static contextType = ApiContext;
@@ -43,7 +43,6 @@ class Eatery extends Component {
             console.error({ error })
         });
     }
-    // deletes the eatery, but the log remains in myLogs until refresh !! how to fix this ? 
 
     render() {
         const { id, name, phone, address, notes } = this.props;

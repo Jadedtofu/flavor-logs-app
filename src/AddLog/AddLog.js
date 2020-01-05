@@ -99,7 +99,7 @@ class AddLog extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        const flavorlog = {
+        const flavorLog = {
             title: e.target['log-title'].value,
             info: e.target['log-info'].value,
             ordered: e.target['log-ordered'].value,
@@ -115,7 +115,7 @@ class AddLog extends Component {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(flavorlog)
+            body: JSON.stringify(flavorLog)
         })
         // .then(res => {
         //     console.log(flavorlog)
@@ -126,9 +126,20 @@ class AddLog extends Component {
             }
             return res.json()
         })
-        .then(flavorlog => {
-            this.context.addLog(flavorlog);
-            this.props.history.push('/myLogs');
+        .then(flavorLog => {
+            this.context.addLog(flavorLog);
+            // refresh the eateries after adding the flavorLog above
+            fetch(`${config.API_ENDPOINT}/eateries`)
+            .then(eateriesRes => {
+                return eateriesRes.json();
+            })
+            .then(eateries => {
+                this.context.eateries = eateries;
+                console.log(this.context.eateries);
+            })
+            .then(() => {
+                this.props.history.push('/myLogs');
+            })
         })
         .catch(error => {
             console.error({ error });
