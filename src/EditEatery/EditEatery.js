@@ -60,7 +60,6 @@ class EditEatery extends Component {
     handleSubmit = e => {
         e.preventDefault();
         const eatery_id = this.props.match.params.eatery_id;
-        console.log(eatery_id);
 
         const eateryToUpdate = {
             name: e.target['eatery-name'].value,
@@ -86,7 +85,7 @@ class EditEatery extends Component {
         })
         .then(() => {
             this.context.editEatery(eatery_id);
-            // update context with the new eateries: 
+            // update context with the new updated Eatery: 
             fetch(`${config.API_ENDPOINT}/eateries`)
             .then(eateriesRes => {
                 return eateriesRes.json();

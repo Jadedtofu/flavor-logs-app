@@ -128,17 +128,41 @@ class AddLog extends Component {
         })
         .then(flavorLog => {
             this.context.addLog(flavorLog);
-            // update context to have correct eatery name if it was updated
-            fetch(`${config.API_ENDPOINT}/eateries`)
-            .then(eateriesRes => {
-                return eateriesRes.json();
+        // // update context to have correct eatery name if it was updated
+            // fetch(`${config.API_ENDPOINT}/eateries`)
+            // .then(eateriesRes => {
+            //     return eateriesRes.json();
+            // })
+            // .then(eateries => {
+            //     this.context.eateries = eateries;
+            //     // console.log(this.context.eateries);
+            // })
+            // .then(() => {
+            //     this.props.history.push('/myLogs');
+            // })
+        // attempting to update eateries and flavorLogs if they've been updated
+            Promise.all([
+                fetch(`${config.API_ENDPOINT}/eateries`),
+                fetch(`${config.API_ENDPOINT}/flavorLogs`)
+            ])
+            .then(([eateriesRes, flavorLogsRes]) => {
+                if(!eateriesRes.ok) {
+                    return eateriesRes.json().then(e => Promise.reject(e))
+                }
+                    if(!flavorLogsRes.ok) {
+                        return flavorLogsRes.json().then(e => Promise.reject(e))
+                    }
+                    return Promise.all([
+                        eateriesRes.json(),
+                        flavorLogsRes.json()
+                    ])
             })
-            .then(eateries => {
+            .then(([eateries, flavorLogs]) => {
                 this.context.eateries = eateries;
-                // console.log(this.context.eateries);
+                this.context.flavorLogs = flavorLogs;
             })
             .then(() => {
-                this.props.history.push('/myLogs');
+                this.props.history.push(`/myLogs`)
             })
         })
         .catch(error => {

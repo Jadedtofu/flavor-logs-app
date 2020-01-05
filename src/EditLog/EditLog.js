@@ -79,6 +79,55 @@ class EditLog extends Component {
 
     static contextType = ApiContext;
     
+    handleSubmit = e => {  // this is currently not working properly
+        e.preventDefault();
+        const flavorLog_id = this.props.match.params.flavorLog_id;
+
+        const flavorLogToUpdate = {
+            title: e.target['log-title'].value,
+            info: e.target['log-info'].value,
+            ordered: e.target['log-ordered'].value,
+            rating: e.target['log-rating'].value,
+            date: e.target['log-date'].value,
+            image_link: e.target['image-link'].value,
+            image_alt: e.target['image-alt'].value,
+            eatery_id: e.target['eatery-id'].value
+        }
+
+        fetch(`${config.API_ENDPOINT}/flavorLogs/${flavorLog_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(flavorLogToUpdate)
+        })
+        .then(res => {
+            console.log(flavorLogToUpdate)
+        })
+        // .then(res => {
+        //     if(!res.ok) {
+        //         return res.json().then(e => Promise.reject(e))
+        //     }
+        // })
+        // .then(() => {
+        //     this.context.editLog(flavorLog_id)
+        //     // update context with new updated Flavor Log:
+        //     fetch(`${config.API_ENDPOINT}/flavorLogs`)
+        //     .then(flavorLogsRes => {
+        //         return flavorLogsRes.json();
+        //     })
+        //     .then(flavorLogs => {
+        //         this.context.flavorLogs = flavorLogs;
+        //         // console.log(this.context.flavorLogs);
+        //     })
+        //     .then(() => {
+        //         this.props.history.push('/myLogs');
+        //     })
+        // })
+        // .catch(error => {
+        //     console.error({ error });
+        // });
+    }
 
     render() {
         const { eateries=[], flavorLogs=[] }  = this.context;
@@ -158,7 +207,7 @@ class EditLog extends Component {
                     <h1 className="edit-log-text">Edit a Log</h1>
                 </header>
 
-                <ShareForm>
+                <ShareForm onSubmit={this.handleSubmit}>
                     <div className="field">
                         <label htmlFor="log-title">Log Title</label>
                         <input type="text" name="log-title" defaultValue={flavorLogTitle} required
