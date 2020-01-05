@@ -21,20 +21,32 @@ class EditLog extends Component {
         super(props);
         this.state = {
             flavorLogTitle: '',
+            flavorLogEatery: '',
             flavorLogInfo: '',
             flavorLogTitleValid: false,
+            flavorLogEateryValid: false,
             flavorLogInfoValid: false,
             formValid: false,
             validationMessages: {
                 flavorLogTitleTitle: '',
+                flavorLogEateryName: '',
                 flavorLogLogInfo: ''
             }
         }
     }
 
+
     updateFlavorLogTitle(flavorLogTitle) {
         this.setState({flavorLogTitle}, () => {this.validateFlavorLogTitle(flavorLogTitle)});
     }
+    
+    handleFlavorLogEatery(flavorLogEatery) {  // just update the name? 
+        this.setState({flavorLogEatery});
+    }
+
+    // updateFlavorLogEatery(flavorLogEatery) {
+    //     this.setState({flavorLogEatery}, () => {this.validateFlavorLogEatery(flavorLogEatery)});
+    // }
 
     updateFlavorLogInfo(flavorLogInfo) {
         this.setState({flavorLogInfo}, () => {this.validateFlavorLogInfo(flavorLogInfo)});
@@ -55,6 +67,21 @@ class EditLog extends Component {
             flavorLogTitleValid: !hasError
         }, this.formValid);
     }
+
+    // validateFlavorLogEatery(fieldValue) {  // I don't need this to validate?? 
+    //     const fieldErrors = {...this.state.validationMessages};
+    //     let hasError = false;
+
+    //     if(fieldValue === null) {
+    //         fieldErrors.flavorLogEateryName = 'Please select an eatery';
+    //         hasError = true;
+    //     }
+
+    //     this.setState({
+    //         validationMessages: fieldErrors,
+    //         flavorLogEateryValid: !hasError
+    //     }, this.formValid);
+    // }
 
     validateFlavorLogInfo(fieldValue) {
         const fieldErrors = {...this.state.validationMessages};
@@ -81,6 +108,7 @@ class EditLog extends Component {
     
     handleSubmit = e => {  // this is currently not working properly
         e.preventDefault();
+        // console.log('clicked')
         const flavorLog_id = this.props.match.params.flavorLog_id;
 
         const flavorLogToUpdate = {
@@ -101,32 +129,32 @@ class EditLog extends Component {
             },
             body: JSON.stringify(flavorLogToUpdate)
         })
-        .then(res => {
-            console.log(flavorLogToUpdate)
-        })
         // .then(res => {
-        //     if(!res.ok) {
-        //         return res.json().then(e => Promise.reject(e))
-        //     }
+        //     console.log(flavorLogToUpdate);
         // })
-        // .then(() => {
-        //     this.context.editLog(flavorLog_id)
-        //     // update context with new updated Flavor Log:
-        //     fetch(`${config.API_ENDPOINT}/flavorLogs`)
-        //     .then(flavorLogsRes => {
-        //         return flavorLogsRes.json();
-        //     })
-        //     .then(flavorLogs => {
-        //         this.context.flavorLogs = flavorLogs;
-        //         // console.log(this.context.flavorLogs);
-        //     })
-        //     .then(() => {
-        //         this.props.history.push('/myLogs');
-        //     })
-        // })
-        // .catch(error => {
-        //     console.error({ error });
-        // });
+        .then(res => {
+            if(!res.ok) {
+                return res.json().then(e => Promise.reject(e))
+            }
+        })
+        .then(() => {
+            this.context.editLog(flavorLog_id)
+            // update context with new updated Flavor Log:
+            fetch(`${config.API_ENDPOINT}/flavorLogs`)
+            .then(flavorLogsRes => {
+                return flavorLogsRes.json();
+            })
+            .then(flavorLogs => {
+                this.context.flavorLogs = flavorLogs;
+                // console.log(this.context.flavorLogs);
+            })
+            .then(() => {
+                this.props.history.push('/myLogs');
+            })
+        })
+        .catch(error => {
+            console.error({ error });
+        });
     }
 
     render() {
@@ -196,6 +224,7 @@ class EditLog extends Component {
             if (key === 'eateryName') {
                 flavorLogEatery = flavorLogToEdit[key];
             }
+            // console.log(flavorLogDate);
         }
 
         let eateriesOptions = eateries.filter(eatery => eatery.id !== flavorLogEateryId);
@@ -218,8 +247,9 @@ class EditLog extends Component {
 
                     <div className="field"> 
                     <label htmlFor="eatery-select-text">Select a Eatery</label>
-                    <select className="eatery-select" id="eatery-input" name="eatery-id">
-                        <option className="options" value="default">{flavorLogEatery}</option>
+                    <select className="eatery-select" id="eatery-input" name="eatery-id"
+                      onChange={e => this.handleFlavorLogEatery(e.target.value)}>
+                        <option className="options" value={flavorLogEateryId}>{flavorLogEatery}</option>
                         {eateriesOptions.map(eatery => 
                             <option key={eatery.id} value={eatery.id}>
                                 {eatery.name}
@@ -239,7 +269,7 @@ class EditLog extends Component {
 
                     <div className="field">
                         <label htmlFor="log-date">Last Eaten Date</label>
-                        <input type="date" name="eaten-date" id="eaten-date" defaultValue={flavorLogDate} 
+                        <input type="date" name="log-date" id="eaten-date" defaultValue={flavorLogDate} 
                          min="1980-01-01"/>
                     </div>
 
@@ -263,9 +293,9 @@ class EditLog extends Component {
 
                     <div className="buttons">
                         <button type="submit" className="edit-log-back-btn"><Link to='/myLogs'>Back</Link></button>
-                        <button type="submit" className="edit-log-form-btn" disabled={!this.state.formValid}>Edit</button>
+                        <button type="submit" className="edit-log-form-btn" >Edit</button>
                     </div>
-                    
+                    {/* disabled={!this.state.formValid} */}
                 </ShareForm>
             </main>
         );
