@@ -91,7 +91,7 @@ class MyLogs extends Component {
                     <h1 className="my-logs-title">My Logs</h1>
                 </header>
 
-                <section className="sort-section">
+                <section className="sort-add">
                     <div className="sortby">
                         <select className="sortby-options">
                             <option value="default">Sort by All</option>
@@ -100,14 +100,15 @@ class MyLogs extends Component {
                             <option value="ordered">Sort by Ordered</option>
                             <option value="rating">Sort by Rating</option>
                         </select>
+                        <button className="add-log-btn"><Link to='/addLog'>Add a log</Link></button>
                     </div>
                 </section>
 
-                {logsMapped}
-
-                <section className="add-log-section">
+                {/* <section className="add-log-section">
                     <button className="add-log-btn"><Link to='/addLog'>Add a log</Link></button>
-                </section>
+                </section> */}
+
+                {logsMapped}
 
             </main>
         );

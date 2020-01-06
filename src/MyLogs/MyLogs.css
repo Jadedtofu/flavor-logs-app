@@ -1,5 +1,6 @@
 .add-log-btn {
     padding: 1%;
+    margin-left: 5%;
 }
 
 .add-log-btn a {
@@ -49,7 +50,7 @@
 }
 
 .sortby-options {
-    height: 35px;
+    height: 10%;
     padding: 1% 2% 1% 2%;
     width: 30%;
 }
