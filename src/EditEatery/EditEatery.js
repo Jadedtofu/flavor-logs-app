@@ -85,16 +85,26 @@ class EditEatery extends Component {
         })
         .then(() => {
             this.context.editEatery(eatery_id);
-            // update context with the new updated Eatery: 
-            fetch(`${config.API_ENDPOINT}/eateries`)
-            .then(eateriesRes => {
-                return eateriesRes.json();
+            // update context:
+            Promise.all([
+                fetch(`${config.API_ENDPOINT}/eateries`),
+                fetch(`${config.API_ENDPOINT}/flavorLogs`)
+            ])
+            .then(([eateriesRes, flavorLogsRes]) => {
+                if(!eateriesRes.ok) {
+                    return eateriesRes.json().then(e => Promise.reject(e))
+                }
+                    if(!flavorLogsRes.ok) {
+                        return flavorLogsRes.json().then(e => Promise.reject(e))
+                    }
+                    return Promise.all([
+                        eateriesRes.json(),
+                        flavorLogsRes.json()
+                    ])
             })
-            .then(eateries => {
-                // console.log(this.context.flavorLogs);
-                // console.log(flavorLogs);
+            .then(([eateries, flavorLogs]) => {
                 this.context.eateries = eateries;
-                // console.log(this.context.eateries);
+                this.context.flavorLogs = flavorLogs;
             })
             .then(() => {
                 this.props.history.push('/myEateries')

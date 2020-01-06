@@ -24,29 +24,22 @@ class EditLog extends Component {
             flavorLogEatery: '',
             flavorLogInfo: '',
             flavorLogTitleValid: false,
-            flavorLogEateryValid: false,
             flavorLogInfoValid: false,
             formValid: false,
             validationMessages: {
                 flavorLogTitleTitle: '',
-                flavorLogEateryName: '',
                 flavorLogLogInfo: ''
             }
         }
     }
 
-
     updateFlavorLogTitle(flavorLogTitle) {
         this.setState({flavorLogTitle}, () => {this.validateFlavorLogTitle(flavorLogTitle)});
     }
     
-    handleFlavorLogEatery(flavorLogEatery) {  // just update the name? 
+    handleFlavorLogEatery(flavorLogEatery) {  // just update the name of the eatery
         this.setState({flavorLogEatery});
     }
-
-    // updateFlavorLogEatery(flavorLogEatery) {
-    //     this.setState({flavorLogEatery}, () => {this.validateFlavorLogEatery(flavorLogEatery)});
-    // }
 
     updateFlavorLogInfo(flavorLogInfo) {
         this.setState({flavorLogInfo}, () => {this.validateFlavorLogInfo(flavorLogInfo)});
@@ -67,21 +60,6 @@ class EditLog extends Component {
             flavorLogTitleValid: !hasError
         }, this.formValid);
     }
-
-    // validateFlavorLogEatery(fieldValue) {  // I don't need this to validate?? 
-    //     const fieldErrors = {...this.state.validationMessages};
-    //     let hasError = false;
-
-    //     if(fieldValue === null) {
-    //         fieldErrors.flavorLogEateryName = 'Please select an eatery';
-    //         hasError = true;
-    //     }
-
-    //     this.setState({
-    //         validationMessages: fieldErrors,
-    //         flavorLogEateryValid: !hasError
-    //     }, this.formValid);
-    // }
 
     validateFlavorLogInfo(fieldValue) {
         const fieldErrors = {...this.state.validationMessages};
@@ -140,18 +118,7 @@ class EditLog extends Component {
         .then(() => {
             this.context.editLog(flavorLog_id)
             // // update context with new updated Flavor Log:
-            // fetch(`${config.API_ENDPOINT}/flavorLogs`)
-            // .then(flavorLogsRes => {
-            //     return flavorLogsRes.json();
-            // })
-            // .then(flavorLogs => {
-            //     this.context.flavorLogs = flavorLogs;
-            //     // console.log(this.context.flavorLogs);
-            // })
-            // .then(() => {
-            //     this.props.history.push('/myLogs');
-            // })
-            // // attempting to update eateries and flavorLogs after update
+
             Promise.all([
                 fetch(`${config.API_ENDPOINT}/eateries`),
                 fetch(`${config.API_ENDPOINT}/flavorLogs`)

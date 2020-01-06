@@ -21,16 +21,26 @@ class MyEateries extends Component {
     handleDeleteEatery = () => {  
         this.props.history.push('/myEateries');
         // update the logs below
-        fetch(`${config.API_ENDPOINT}/flavorLogs`)
-        .then(flavorLogsRes => {
-            return flavorLogsRes.json();
+        Promise.all([
+            fetch(`${config.API_ENDPOINT}/eateries`),
+            fetch(`${config.API_ENDPOINT}/flavorLogs`)
+        ])
+        .then(([eateriesRes, flavorLogsRes]) => {
+            if(!eateriesRes.ok) {
+                return eateriesRes.json().then(e => Promise.reject(e))
+            }
+                if(!flavorLogsRes.ok) {
+                    return flavorLogsRes.json().then(e => Promise.reject(e))
+                }
+                return Promise.all([
+                    eateriesRes.json(),
+                    flavorLogsRes.json()
+                ])
         })
-        .then(flavorLogs => {
-            // console.log(this.context.flavorLogs);
-            // console.log(flavorLogs);
+        .then(([eateries, flavorLogs]) => {
+            this.context.eateries = eateries;
             this.context.flavorLogs = flavorLogs;
-            // console.log(this.context.flavorLogs);
-        });
+        })
     }
 
     render() {
@@ -53,10 +63,13 @@ class MyEateries extends Component {
                 <h1 className="my-eateries-title" >My Eateries</h1>
             </header>
 
+            <section>
+                <button className="add-eatery-btn"><Link to='/addEatery'>Add an Eatery</Link></button>
+            </section>
+
             {eateryMapped}
 
             <section>
-                <button className="add-eatery-btn"><Link to='/addEatery'>Add an Eatery</Link></button>
                 <p>* Disclaimer: Deleting a eatery will delete ALL logs associated with that eatery</p>
             </section>
         </main>

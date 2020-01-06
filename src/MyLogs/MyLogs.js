@@ -21,13 +21,26 @@ class MyLogs extends Component {
     handleDeleteLog = () => {
         this.props.history.push('/myLogs');
         // update the eateries below 
-        fetch(`${config.API_ENDPOINT}/eateries`)
-        .then(eateriesRes => {
-            return eateriesRes.json();
+        Promise.all([
+            fetch(`${config.API_ENDPOINT}/eateries`),
+            fetch(`${config.API_ENDPOINT}/flavorLogs`)
+        ])
+        .then(([eateriesRes, flavorLogsRes]) => {
+            if(!eateriesRes.ok) {
+                return eateriesRes.json().then(e => Promise.reject(e))
+            }
+                if(!flavorLogsRes.ok) {
+                    return flavorLogsRes.json().then(e => Promise.reject(e))
+                }
+                return Promise.all([
+                    eateriesRes.json(),
+                    flavorLogsRes.json()
+                ])
         })
-        .then(eateries => {
+        .then(([eateries, flavorLogs]) => {
             this.context.eateries = eateries;
-        });
+            this.context.flavorLogs = flavorLogs;
+        })
     }
 
     something = () => {
