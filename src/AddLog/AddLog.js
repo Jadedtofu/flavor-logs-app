@@ -19,6 +19,7 @@ class AddLog extends Component {
             flavorLogTitle: '',
             flavorLogEatery: '',
             flavorLogInfo: '',
+            flavorLogDate: '',
             flavorLogTitleValid: false,
             flavorLogEateryValid: false,
             flavorLogInfoValid: false,
@@ -94,7 +95,7 @@ class AddLog extends Component {
             formValid: this.state.flavorLogTitleValid && this.state.flavorLogEateryValid && this.state.flavorLogInfoValid
         });
     }
-
+    
     static contextType = ApiContext;
 
     handleSubmit = e => {
@@ -172,6 +173,7 @@ class AddLog extends Component {
 
     render() {
         const { eateries=[] } = this.context;
+
 
         return(
             <main className="add-log-page" role="main">
