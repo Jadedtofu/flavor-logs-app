@@ -73,15 +73,6 @@ class MyLogs extends Component {
         }
         // console.log(flavorLogs);
 
-        // // sorting logic: actually sorts the log data and changes the render:
-        // // implement switch case for these? ?? 
-        // // review onClick value storage in state *** 
-
-        // logs.sort((a, b) => (a.title > b.title) ? 1: -1) // sorts by title
-        // logs.sort((a, b) => (a.eateryName > b.eateryName) ? 1: -1); // sort by eatery
-        // logs.sort((a, b) => (a.ordered > b.ordered) ? 1: -1); // sorts by ordered
-        // logs.sort((a, b) => (a.rating > b.rating) ? -1: 1); // sorts by rating
-
         // rendering all logs
         const logsMapped = flavorLogs.map(flavorLog => 
             <ALog key={flavorLog.id}
@@ -104,22 +95,11 @@ class MyLogs extends Component {
                     <h1 className="my-logs-title">My Logs</h1>
                 </header>
 
-                <section className="sort-add">
-                    <div className="sortby">
-                        <select className="sortby-options">
-                            <option value="default">Sort by All</option>
-                            <option value="title">Sort by Title</option>
-                            <option value="eatery">Sort by Eatery</option>
-                            <option value="ordered">Sort by Ordered</option>
-                            <option value="rating">Sort by Rating</option>
-                        </select>
+                <section>
+                    <div className="add">
                         <button className="add-log-btn"><Link to='/addLog'>Add a log</Link></button>
                     </div>
                 </section>
-
-                {/* <section className="add-log-section">
-                    <button className="add-log-btn"><Link to='/addLog'>Add a log</Link></button>
-                </section> */}
 
                 {logsMapped}
 

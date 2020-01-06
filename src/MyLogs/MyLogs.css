@@ -1,6 +1,5 @@
 .add-log-btn {
     padding: 1%;
-    margin-left: 5%;
 }
 
 .add-log-btn a {
@@ -48,10 +47,3 @@
 .my-logs-title {
     margin: 5% 2% 2% 2%;
 }
-
-.sortby-options {
-    height: 10%;
-    padding: 1% 2% 1% 2%;
-    width: 30%;
-}
-
