@@ -179,7 +179,7 @@ class AddLog extends Component {
                     </div>
 
                     <div className="field">
-                    <label htmlFor="eatery-select-text">Select a Eatery</label>
+                    <label htmlFor="eatery-select-text">Select a Eatery *</label>
                     <select className="eatery-select" id="eatery-input" name="eatery-id"
                       onChange={e => this.addFlavorLogEatery(e.target.value)} >
                         <option className="options" value="empty">...</option>
@@ -223,7 +223,7 @@ class AddLog extends Component {
                     </div>
 
                     <div className="field">
-                        <label htmlFor="image-alt">Description for Image</label>
+                        <label htmlFor="image-alt">Image Description for Screen Readers</label>
                         <input type="text" name="image-alt" id="image-alt" placeholder="Coffee Bread Roll next to Cup of Latte"/>
                     </div>
 

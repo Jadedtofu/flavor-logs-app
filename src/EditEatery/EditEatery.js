@@ -41,7 +41,7 @@ class EditEatery extends Component {
         if(fieldValue.length === 0) {
             fieldErrors.eateryNameName = 'Please type a name for this eatery';
             hasError = true;
-        }
+        } 
 
         this.setState({
             validationMessages: fieldErrors,
@@ -185,9 +185,9 @@ class EditEatery extends Component {
 
                     <div className="buttons">
                         <button type="submit" className="edit-eatery-back-btn"><Link to='/myEateries'>Back</Link></button>
-                        <button type="submit" className="edit-eatery-form-btn" disabled={!this.state.formValid}>Edit</button>
+                        <button type="submit" className="edit-eatery-form-btn" >Edit</button>
                     </div>
-
+                    {/* disabled={!this.state.formValid} */}
                 </ShareForm>
             </main>
         );

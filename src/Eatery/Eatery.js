@@ -53,9 +53,12 @@ class Eatery extends Component {
                 </header>
 
                 <ul className="eatery-info">
-                    <li>Phone Number: {phone}</li>
-                    <li>Address: {address}</li>
-                    <li>Additional Notes: {notes}</li>
+                    {!this.props.phone ? null : 
+                    <li>Phone Number: {phone}</li>}
+                    {!this.props.address ? null :
+                    <li>Address: {address}</li>}
+                    {!this.props.notes ? null : 
+                    <li>Additional Notes: {notes}</li>}
                 </ul>
 
                 <div className="edit-delete-btns">

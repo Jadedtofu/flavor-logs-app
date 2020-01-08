@@ -57,16 +57,18 @@ class ALog extends Component {
                 </header>
 
                 <ul className='item-info'>
-                    <li>Ordered: {ordered}</li>
+                    {!this.props.ordered ? null : 
+                    <li>Ordered: {ordered}</li>}
                     <li className="rating">Rating: <Rating value={rating} /></li>
-                    <li className="last-date">Last Date Eaten: {date}</li>
+                    {!this.props.date ? null : 
+                    <li className="last-date">Last Date Eaten: {date}</li>}
                 </ul>
 
                 <blockquote>
                     {info}
                 </blockquote>
-
-                <img alt={image_alt} src={image} />
+                {!this.props.image ? null : 
+                <img className="food-img" alt={image_alt} src={image} />}
 
                 <div className="edit-delete-btns">
                     <button className="edit-log-btn">

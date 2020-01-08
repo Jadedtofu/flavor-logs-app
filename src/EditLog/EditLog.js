@@ -229,7 +229,7 @@ class EditLog extends Component {
 
                 <ShareForm onSubmit={this.handleSubmit}>
                     <div className="field">
-                        <label htmlFor="log-title">Log Title</label>
+                        <label htmlFor="log-title">Log Title *</label>
                         <input type="text" name="log-title" defaultValue={flavorLogTitle} required
                           onChange={e => this.updateFlavorLogTitle(e.target.value)} />
                           <ValidationError hasError={!this.state.flavorLogTitleValid}
@@ -237,7 +237,7 @@ class EditLog extends Component {
                     </div> 
 
                     <div className="field"> 
-                    <label htmlFor="eatery-select-text">Select a Eatery</label>
+                    <label htmlFor="eatery-select-text">Select a Eatery *</label>
                     <select className="eatery-select" id="eatery-input" name="eatery-id"
                       onChange={e => this.handleFlavorLogEatery(e.target.value)}>
                         <option className="options" value={flavorLogEateryId}>{flavorLogEatery}</option>
@@ -265,7 +265,7 @@ class EditLog extends Component {
                     </div>
 
                     <div className="field">
-                        <label htmlFor="log-info">Log Details</label>
+                        <label htmlFor="log-info">Log Details *</label>
                         <textarea name="log-info" rows="6" defaultValue={flavorLogInfo}
                           onChange={e => this.updateFlavorLogInfo(e.target.value)} />
                           <ValidationError hasError={!this.state.flavorLogInfoValid}
@@ -278,7 +278,7 @@ class EditLog extends Component {
                     </div>
 
                     <div className="field">
-                        <label htmlFor="image-alt">Description for Image</label>
+                        <label htmlFor="image-alt">Image Description for Screen Readers</label>
                         <input type="text" name="image-alt" id="image-alt" defaultValue={flavorLogImgAlt}/>
                     </div>
 
@@ -288,6 +288,10 @@ class EditLog extends Component {
                     </div>
                     {/* disabled={!this.state.formValid} */}
                 </ShareForm>
+
+                <section>
+                    <p className="required-fields">* Required fields</p>
+                </section>
             </main>
         );
     }
