@@ -3,6 +3,7 @@
 }
 
 .add-eatery-btn a {
+    font-family: 'Roboto', sans-serif;
     color: rgb(82, 171, 255);
 }
 
@@ -26,11 +27,21 @@
     margin-left: 0.5%;
 }
 
+.disclaimer-bold {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.disclaimer-text {
+    font-family: 'Roboto', sans-serif;
+}
+
 .my-eateries-header {
     padding: 3% 2% 0%;
     text-align: center;
 }
 
 .my-eateries-title {
+    font-family: 'Roboto', sans-serif;
     margin: 5% 2% 2% 2%;
 }

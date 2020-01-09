@@ -14,7 +14,7 @@ a:hover {
 }
 
 .fa-book {
-    padding-right: 6%;
+    padding-right: 4%;
 }
 
 .logo {
@@ -27,6 +27,8 @@ a:hover {
 
 .logo a {
     color: rgb(133, 228, 109);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
 }
 
 .logo a:focus {
@@ -61,6 +63,16 @@ a:hover {
 
 .my-eateries .fa-utensils {
     padding-right: 6%;
+}
+
+.my-logs a {
+    font-family: 'Roboto', sans-serif;
+    padding-right: 8%;
+}
+
+.my-eateries a {
+    font-family: 'Roboto', sans-serif;
+    padding-right: 8%;
 }
 
 nav {

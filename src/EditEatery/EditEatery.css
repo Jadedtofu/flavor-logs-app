@@ -11,9 +11,20 @@
 .edit-eatery-text {
     color: rgb(82, 171, 255);
     cursor: default;
+    font-family: 'Roboto', sans-serif;
     margin: 5% 2% 2% 2%;
 }
 
+.edit-eatery-back-btn a {
+    font-family: 'Roboto', sans-serif;
+}
+
 .edit-eatery-form-btn {
+    font-family: 'Roboto', sans-serif;
     cursor: pointer;
+    padding-top: 0.7%;
+}
+
+.required-fields {
+    font-family: 'Roboto', sans-serif;
 }

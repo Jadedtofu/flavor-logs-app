@@ -70,7 +70,7 @@ class MyEateries extends Component {
             {eateryMapped}
 
             <section>
-                <p>* Disclaimer: Deleting a eatery will delete ALL logs associated with that eatery</p>
+                <p className="disclaimer-text">* <span className="disclaimer-bold">Disclaimer:</span> Deleting a eatery will delete ALL logs associated with that eatery</p>
             </section>
         </main>
         );

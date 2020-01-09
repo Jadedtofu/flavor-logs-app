@@ -3,6 +3,7 @@
 }
 
 .add-log-btn a {
+    font-family: 'Roboto', sans-serif;
     color: rgb(133, 228, 109);
 }
 
@@ -45,5 +46,6 @@
 }
 
 .my-logs-title {
+    font-family: 'Roboto', sans-serif;
     margin: 5% 2% 2% 2%;
 }

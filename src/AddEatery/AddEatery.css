@@ -15,5 +15,11 @@
 }
 
 .add-eatery-form-btn {
+    font-family: 'Roboto', sans-serif;
     cursor: pointer;
+    padding-top: 0.7%;
+}
+
+.add-eatery-back-btn a {
+    font-family: 'Roboto', sans-serif;
 }

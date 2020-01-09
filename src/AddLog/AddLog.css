@@ -11,28 +11,35 @@
 .add-log-text {
     color:  rgb(133, 228, 109);
     cursor: default;
+    font-family: 'Roboto', sans-serif;
     margin: 5% 2% 2% 2%;
 }
 
 .add-log-form-btn {
     cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 0.7%;
 }
 
 .add-log-form-btn a {
     color: rgb(133, 228, 109);
 }
 
-.add-log-form-btn a:hover {
+.add-log-back-btn a {
+    font-family: 'Roboto', sans-serif;
+}
+
+.add-log-back-btn a:hover {
     transition: 0.2s ease-out;
-    color: rgb(255, 243, 82);
+    /* color: rgb(255, 243, 82); */
 }
 
-.add-log-form-btn a:focus {
+.add-log-back-btn a:focus {
     color: rgb(174, 255, 143);
-    border-bottom: 2px solid;
+    /* border-bottom: 2px solid; */
 }
 
-.add-log-form-btn a:active {
+.add-log-back-btn a:active {
     transition: 0.1s ease-out;
-    color: rgb(253, 234, 148);
+    /* color: rgb(253, 234, 148); */
 }

@@ -21,10 +21,19 @@
 }
 
 .log-name {
+    font-family: 'Roboto', sans-serif;
     color: rgb(133, 228, 109);
+    font-size: 1.8em;
     margin-bottom: 0.5%;
 }
 
 .eatery-name {
+    font-size: 1.3em;
     margin-bottom: 1%;
+}
+
+.ordered-text,
+.rating-text,
+.last-date-text {
+    font-weight: bold;
 }

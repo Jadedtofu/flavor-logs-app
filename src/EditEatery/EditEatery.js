@@ -189,6 +189,10 @@ class EditEatery extends Component {
                     </div>
                     {/* disabled={!this.state.formValid} */}
                 </ShareForm>
+
+                <section>
+                    <p className="required-fields">* Required fields</p>
+                </section>
             </main>
         );
     }

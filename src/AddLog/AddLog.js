@@ -171,7 +171,7 @@ class AddLog extends Component {
 
                 <ShareForm onSubmit={this.handleSubmit}>
                     <div className="field">
-                        <label htmlFor="log-title">Log Title *</label>
+                        <label className="log-title-text" htmlFor="log-title">Log Title *</label>
                         <input type="text" name="log-title" placeholder="Best pho in town" required
                           onChange={e => this.addFlavorLogTitle(e.target.value)} />
                           <ValidationError hasError={!this.state.flavorLogTitleValid}
