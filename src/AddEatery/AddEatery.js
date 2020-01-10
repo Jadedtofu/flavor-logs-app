@@ -144,10 +144,11 @@ class AddEatery extends Component {
 
                     <div className="buttons">
                         <button type="submit" className="add-eatery-back-btn"><Link to='/myEateries'>Back</Link></button>
-                        <button type="submit" className="add-eatery-form-btn" disabled={!this.state.formValid}>Add</button>
+                        <button type="submit" className="add-eatery-form-btn" >Add</button>
                     </div>
-
                 </ShareForm>
+
+                    {/* disabled={!this.state.formValid} */}
                 <section>
                     <p className="required-field">* Required field</p>
                 </section>

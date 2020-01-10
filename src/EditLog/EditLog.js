@@ -286,9 +286,9 @@ class EditLog extends Component {
                         <button type="submit" className="edit-log-back-btn"><Link to='/myLogs'>Back</Link></button>
                         <button type="submit" className="edit-log-form-btn" >Edit</button>
                     </div>
-                    {/* disabled={!this.state.formValid} */}
                 </ShareForm>
 
+                {/* disabled={!this.state.formValid} */}
                 <section>
                     <p className="required-fields">* Required fields</p>
                 </section>

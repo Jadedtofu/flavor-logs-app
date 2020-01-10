@@ -36,9 +36,11 @@ class EditEatery extends Component {
     validateEateryName(fieldValue) {
         const fieldErrors = {...this.state.validationMessages};
         let hasError = false;
+        // console.log(fieldValue)
 
         fieldValue = fieldValue.trim();
         if(fieldValue.length === 0) {
+            // console.log('made it');
             fieldErrors.eateryNameName = 'Please type a name for this eatery';
             hasError = true;
         } 
@@ -161,7 +163,7 @@ class EditEatery extends Component {
 
                 <ShareForm onSubmit={this.handleSubmit}>
                     <div className="field">
-                        <label htmlFor="eatery-name">Eatery</label>
+                        <label htmlFor="eatery-name">Eatery *</label>
                         <input type="text" name="eatery-name" defaultValue={eateryName} required 
                             onChange={e => this.updateEateryName(e.target.value)} />
                           <ValidationError hasError={!this.state.eateryNameValid}
@@ -187,9 +189,9 @@ class EditEatery extends Component {
                         <button type="submit" className="edit-eatery-back-btn"><Link to='/myEateries'>Back</Link></button>
                         <button type="submit" className="edit-eatery-form-btn" >Edit</button>
                     </div>
-                    {/* disabled={!this.state.formValid} */}
                 </ShareForm>
 
+                {/* disabled={!this.state.formValid} */}
                 <section>
                     <p className="required-fields">* Required fields</p>
                 </section>

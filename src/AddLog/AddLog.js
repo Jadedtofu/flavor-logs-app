@@ -229,10 +229,11 @@ class AddLog extends Component {
 
                     <div className="buttons">
                         <button type="submit" className="add-log-back-btn"><Link to='/myLogs'>Back</Link></button>
-                        <button type="submit" className="add-log-form-btn" disabled={!this.state.formValid}>Add</button>
+                        <button type="submit" className="add-log-form-btn" >Add</button>
                     </div>
                 </ShareForm>
-
+                
+                {/* disabled={!this.state.formValid} */}
                 <section>
                     <p className="required-fields">* Required fields</p>
                 </section>
