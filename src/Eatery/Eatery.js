@@ -63,11 +63,11 @@ class Eatery extends Component {
 
                 <div className="edit-delete-btns">
                     <button className="edit-eatery-btn">
-                        <Link to={`/editEatery/${id}`}><i className="fas fa-pencil-alt"></i></Link>
+                        <Link to={`/editEatery/${id}`}><i className="blue-pencil fas fa-pencil-alt"></i></Link>
                     </button>
                     <button className="delete-eatery-btn"
                       onClick={this.handleClickDeleteEatery}>
-                          <i className="fas fa-trash-alt"></i>
+                          <i className="eatery-trash-can fas fa-trash-alt"></i>
                     </button><span className="disclaimer-star">*</span>
                 </div>
             </section>

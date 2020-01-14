@@ -1,17 +1,4 @@
-a:active {
-    transition: 0.1s ease-out;
-    color: rgb(253, 234, 148);
-}
 
-a:focus {
-    color: rgb(174, 255, 143);
-    border-bottom: 2px solid;
-}
-
-a:hover {
-    transition: 0.2s ease-out;
-    color: rgb(82, 171, 255);
-}
 
 .fa-book {
     padding-right: 4%;
@@ -31,19 +18,18 @@ a:hover {
     font-size: 1.2em;
 }
 
-.logo a:focus {
-    color: rgb(174, 255, 143);
-    border-bottom: 2px solid;
-}
-
 .logo a:hover {
-    transition: 0.1s ease-out;
+    transition: 0.2s ease-out;
     color: rgb(110, 209, 86);
 }
 
+.logo a:focus {
+    color: rgb(178, 255, 147);
+    border-bottom: 2px solid;
+}
+
 .logo a:active {
-    transition: 0.1s ease-out;
-    color: rgb(253, 234, 148);
+    color: rgb(119, 233, 96);
 }
 
 .my-logs,
@@ -56,11 +42,6 @@ a:hover {
 .my-logs .fa-file-alt {
     padding-right: 6%;
 }
-
-.my-logs a:hover {
-    color: rgb(133, 228, 109);
-}
-
 .my-eateries .fa-utensils {
     padding-right: 6%;
 }
@@ -70,9 +51,37 @@ a:hover {
     padding-right: 8%;
 }
 
+.my-logs a:hover {
+    transition: 0.2s ease-out;
+    color: rgb(133, 228, 109);
+}
+
+.my-logs a:focus {
+    color: rgb(178, 255, 147);
+    border-bottom: 2px solid;
+}
+
+.my-logs a:active {
+    color: rgb(119, 233, 96);
+}
+
 .my-eateries a {
     font-family: 'Roboto', sans-serif;
     padding-right: 8%;
+}
+
+.my-eateries a:hover {
+    transition: 0.2s ease-out;
+    color: rgb(82, 171, 255);
+}
+
+.my-eateries a:focus {
+    color: rgb(118, 212, 255);
+    border-bottom: 2px solid;
+}
+
+.my-eateries a:active {
+    color: rgb(83, 161, 235);
 }
 
 nav {

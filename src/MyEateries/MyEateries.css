@@ -1,26 +1,36 @@
 .add-eatery-btn {
-    background-color: rgb(51, 48, 46);
-    padding: 1%;
+    background-color: rgb(82, 171, 255);
+    border: none;
+    border-radius: 5px;
+    margin-top: 2.5%;
+    padding: 1.5%;
+}
+
+.add-eatery-btn:hover {
+    background-color: rgb(53, 137, 216);
+    transition: 0.2s ease-out;
 }
 
 .add-eatery-btn a {
     font-family: 'Roboto', sans-serif;
-    color: rgb(82, 171, 255);
+    color: rgb(75, 71, 68);
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .add-eatery-btn a:hover {
+    color: rgb(240, 238, 233);
     transition: 0.1s ease-out;
-    color: rgb(253, 234, 148);
 }
 
 .add-eatery-btn a:focus {
-    color: rgb(174, 255, 143);
+    color: rgb(43, 95, 163);
     border-bottom: 2px solid;
 }
 
 .add-eatery-btn a:active {
     transition: 0.1s ease-out;
-    color: rgb(253, 234, 148);
+    color: rgb(148, 228, 253);
 }
 
 .disclaimer {

@@ -28,17 +28,11 @@ h1, h2, h3, p {
 
 section {
   min-height: 100px;
-  padding: 0% 10% 6% 10%;
+  padding: 0% 7% 3% 7%;
+  margin: 0% 5% 6% 5%;
 }
 
 ul {
   padding: 0%;
 }
 
-.fa-pencil-alt {
-  color: rgb(241, 238, 238);
-}
-
-.fa-trash-alt {
-  color: rgb(223, 109, 105);
-}

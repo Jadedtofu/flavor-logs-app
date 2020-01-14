@@ -97,7 +97,7 @@ class MyLogs extends Component {
 
                 <section>
                     <div className="add">
-                        <button className="add-log-btn"><Link to='/addLog'>Add a log</Link></button>
+                        <button className="add-log-btn"><Link to='/addLog'>Add a Log</Link></button>
                     </div>
                 </section>
 

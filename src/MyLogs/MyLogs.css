@@ -1,20 +1,30 @@
 .add-log-btn {
-    background-color: rgb(51, 48, 46);
-    padding: 1%;
+    background-color: rgb(133, 228, 109);
+    border: none;
+    border-radius: 5px;
+    margin-top: 2.5%;
+    padding: 1.5%;
+}
+
+.add-log-btn:hover {
+    transition: 0.2s ease-out;
+    background-color: rgb(101, 199, 76);
 }
 
 .add-log-btn a {
+    color: rgb(75, 71, 68);
     font-family: 'Roboto', sans-serif;
-    color: rgb(133, 228, 109);
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .add-log-btn a:hover {
+    color: rgb(240, 238, 233);
     transition: 0.1s ease-out;
-    color: rgb(253, 234, 148);
 }
 
 .add-log-btn a:focus {
-    color: rgb(174, 255, 143);
+    color: rgb(75, 71, 68);
     border-bottom: 2px solid;
 }
 

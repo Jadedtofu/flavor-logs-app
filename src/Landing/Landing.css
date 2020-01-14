@@ -21,25 +21,35 @@
 }
 
 .view-logs-btn {
-    padding: 1%;
+    background-color: rgb(133, 228, 109);
+    border: none;
+    border-radius: 5px;
+    padding: 2%;
+}
+
+.view-logs-btn:hover {
+    transition: 0.2s ease-out;
+    background-color: rgb(101, 199, 76);
 }
 
 .view-logs-btn a {
-    color: rgb(133, 228, 109);
+    color: rgb(75, 71, 68);
     font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .view-logs-btn a:hover {
+    color: rgb(240, 238, 233);
     transition: 0.2s ease-out;
-    color: rgb(255, 243, 82);
 }
 
 .view-logs-btn a:focus {
-    color: rgb(174, 255, 143);
+    color: rgb(75, 71, 68);
     border-bottom: 2px solid;
 }
 
 .view-logs-btn a:active {
-    transition: 0.1s ease-out;
     color: rgb(253, 234, 148);
+    transition: 0.1s ease-out;
 }

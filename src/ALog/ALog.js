@@ -50,7 +50,7 @@ class ALog extends Component {
         // console.log(this.props);
 
         return(
-            <section>
+            <section className="a-log">
                 <header role="banner">
                     <h2 className="log-name">{title}</h2>
                     <h3 className="eatery-name">{eatery}</h3>
@@ -72,11 +72,11 @@ class ALog extends Component {
 
                 <div className="edit-delete-btns">
                     <button className="edit-log-btn">
-                        <Link to={`/editLog/${id}`}><i className="fas fa-pencil-alt"></i></Link>
+                        <Link to={`/editLog/${id}`}><i className="green-pencil fas fa-pencil-alt"></i></Link>
                     </button>
                     <button className="delete-log-btn"
                       onClick={this.handleClickDeleteLog}>
-                        <i className="fas fa-trash-alt"></i>
+                        <i className="log-trash-can fas fa-trash-alt"></i>
                     </button>
                 </div>
             </section>

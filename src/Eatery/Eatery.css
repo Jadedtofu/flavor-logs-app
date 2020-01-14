@@ -2,17 +2,56 @@
     color: rgb(82, 171, 255);
 }
 
+.eatery-info {
+    padding-bottom: 1.5%;
+}
+
 .edit-eatery-btn {
     background-color: rgb(51, 48, 46);
+    border: 1px solid rgb(82, 171, 255);
+    border-radius: 4px;
     cursor: pointer;
-    margin-right: 2%;
-    padding: 0.5%;
+    margin-right: 3%;
+    padding: 1.3%;
+}
+
+.edit-eatery-btn:hover {
+    background-color: rgb(82, 171, 255);
+    transition: 0.2s ease-out;
+}
+
+.blue-pencil {
+    color: rgb(82, 171, 255);
+    font-size: 2.1em;
+}
+
+.blue-pencil:hover {
+    color: rgb(75, 71, 68);
+    transition: 0.2s ease-out;
 }
 
 .delete-eatery-btn {
     background-color: rgb(51, 48, 46);
+    border: 1px solid rgb(224, 220, 216);
+    border-radius: 4px;
     cursor: pointer;
-    padding: 0.5% 0.7% 0.5% 0.7%;
+    padding: 1.3%;
+}
+
+.delete-eatery-btn:hover {
+    background-color: rgb(223, 109, 105);
+    border: 1px solid rgb(223, 109, 105);
+    transition: 0.2s ease-out;
+}
+
+.eatery-trash-can {
+    color: rgb(223, 109, 105);
+    font-size: 2.1em;
+}
+
+.eatery-trash-can:hover {
+    color: rgb(75, 71, 68);
+    transition: 0.2s ease-out;
 }
 
 .phone-text,
@@ -23,4 +62,6 @@
 
 .disclaimer-star {
     color: rgb(228, 125, 121);
+    font-size: 1.4em;
+    padding-left: 1%;
 }
