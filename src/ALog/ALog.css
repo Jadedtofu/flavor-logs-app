@@ -1,12 +1,13 @@
 .delete-log-btn {
+    background-color: rgb(51, 48, 46);
     cursor: pointer;
     padding: 0.5% 0.7% 0.5% 0.7%;
 }
 
 .edit-log-btn {
+    background-color: rgb(51, 48, 46);
     cursor: pointer;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-right: 2%;
     padding: 0.5%;
 }
 

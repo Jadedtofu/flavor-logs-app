@@ -1,16 +1,18 @@
 * {
+
   font-family: 'Playfair Display', serif;
   box-sizing: border-box;
-  background-color: rgb(66, 63, 60);
-  color: rgb(241, 238, 238);
+  color: rgb(240, 240, 240);
 }
 
 a {
-  color: rgb(241, 238, 238);
+  color: rgb(240, 240, 240);
   text-decoration: none;
 }
 
 body {
+  background-image: url(img/midRawWoodTexture-seamless.jpg);
+  background-repeat: repeat-y repeat-x;
   font-size: 20px;
   text-align: center;
   line-height: 1.5;
@@ -38,5 +40,5 @@ ul {
 }
 
 .fa-trash-alt {
-  color: rgb(255, 150, 146);
+  color: rgb(223, 109, 105);
 }

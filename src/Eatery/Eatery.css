@@ -3,13 +3,14 @@
 }
 
 .edit-eatery-btn {
+    background-color: rgb(51, 48, 46);
     cursor: pointer;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-right: 2%;
     padding: 0.5%;
 }
 
 .delete-eatery-btn {
+    background-color: rgb(51, 48, 46);
     cursor: pointer;
     padding: 0.5% 0.7% 0.5% 0.7%;
 }
@@ -18,4 +19,8 @@
 .address-text,
 .notes-text {
     font-weight: bold;
+}
+
+.disclaimer-star {
+    color: rgb(228, 125, 121);
 }

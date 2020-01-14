@@ -1,4 +1,5 @@
 .add-eatery-btn {
+    background-color: rgb(51, 48, 46);
     padding: 1%;
 }
 
@@ -28,11 +29,13 @@
 }
 
 .disclaimer-bold {
+    color: rgb(228, 125, 121);
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
 
 .disclaimer-text {
+    color: rgb(228, 125, 121);
     font-family: 'Roboto', sans-serif;
 }
 

@@ -16,6 +16,7 @@
 }
 
 .add-log-form-btn {
+    background-color: rgb(51, 48, 46);
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
     padding-top: 0.7%;
@@ -23,6 +24,12 @@
 
 .add-log-form-btn a {
     color: rgb(133, 228, 109);
+}
+
+.add-log-back-btn {
+    background-color: rgb(51, 48, 46);
+    margin-right: 3%;
+    padding-top: 0.4%;
 }
 
 .add-log-back-btn a {

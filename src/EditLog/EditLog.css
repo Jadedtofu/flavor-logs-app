@@ -15,14 +15,20 @@
     margin: 5% 2% 2% 2%;
 }
 
+.edit-log-back-btn {
+    background-color: rgb(51, 48, 46);
+    margin-right: 3%;
+}
+
 .edit-log-back-btn a {
     font-family: 'Roboto', sans-serif;
 }
 
 .edit-log-form-btn {
-    font-family: 'Roboto', sans-serif;
+    background-color: rgb(51, 48, 46);
     cursor: pointer;
-    padding-top: 0.7%;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 0.6%;
 }
 
 .required-fields {

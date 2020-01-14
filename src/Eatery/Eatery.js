@@ -68,7 +68,7 @@ class Eatery extends Component {
                     <button className="delete-eatery-btn"
                       onClick={this.handleClickDeleteEatery}>
                           <i className="fas fa-trash-alt"></i>
-                    </button><span className="disclaimer">*</span>
+                    </button><span className="disclaimer-star">*</span>
                 </div>
             </section>
         );

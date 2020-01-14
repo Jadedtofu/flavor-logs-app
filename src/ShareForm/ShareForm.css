@@ -22,6 +22,7 @@ select {
 .shareform input,
 .shareform textarea,
 .shareform select {
+  background-color: rgb(51, 48, 46);
   font-size: 0.75em;
   padding: 8px;
   width: 325px;
