@@ -60,3 +60,43 @@
     font-family: 'Roboto', sans-serif;
     margin: 5% 2% 2% 2%;
 }
+
+@media screen and (min-width: 320px) and (max-width: 400px) {
+    .my-logs-title {
+        font-size: 1.8em;
+    }
+
+    .add-log-btn {
+        padding: 3%;
+    }
+
+    .add-log-btn a {
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 600px) {
+    .my-logs-title {
+        font-size: 2.1em;
+    }
+
+    .add-log-btn {
+        padding: 2.3%;
+    }
+
+    .add-log-btn a {
+        font-size: 1.7em;
+    }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    .add-log-btn {
+        padding: 1.5%;
+    }
+
+    .add-log-btn a {
+        font-size: 1.5em;
+    }
+
+}

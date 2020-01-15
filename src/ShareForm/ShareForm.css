@@ -23,6 +23,7 @@ select {
 .shareform textarea,
 .shareform select {
   background-color: rgb(51, 48, 46);
+  font-family: 'Roboto', sans-serif;
   font-size: 0.75em;
   padding: 8px;
   width: 325px;
@@ -39,13 +40,11 @@ select {
 .shareform > .buttons {
     margin-top: 26px;
 }
-/* 
+
 select:active, 
 select:hover {
-    outline-color: rgb(255, 135, 22);
-    background-color:  rgb(253, 219, 188);
-    transition: 0.5s ease-out;
-} */
+    outline-color: rgb(233, 227, 221);
+}
 
 @media screen and (min-width: 320px) and (max-width: 400px){
     .shareform input,
