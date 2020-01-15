@@ -237,7 +237,7 @@ class EditLog extends Component {
                     </div> 
 
                     <div className="field"> 
-                    <label htmlFor="eatery-select-text">Select a Eatery *</label>
+                    <label htmlFor="eatery-select-text">Select an Eatery *</label>
                     <select className="eatery-select" id="eatery-input" name="eatery-id"
                       onChange={e => this.handleFlavorLogEatery(e.target.value)}>
                         <option className="options" value={flavorLogEateryId}>{flavorLogEatery}</option>

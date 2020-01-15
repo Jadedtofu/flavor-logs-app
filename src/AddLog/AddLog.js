@@ -179,7 +179,7 @@ class AddLog extends Component {
                     </div>
 
                     <div className="field">
-                    <label htmlFor="eatery-select-text">Select a Eatery *</label>
+                    <label htmlFor="eatery-select-text">Select an Eatery *</label>
                     <select className="eatery-select" id="eatery-input" name="eatery-id"
                       onChange={e => this.addFlavorLogEatery(e.target.value)} >
                         <option className="options" value="empty">...</option>
@@ -205,7 +205,7 @@ class AddLog extends Component {
 
                     <div className="field">
                         <label htmlFor="eaten-date">Last Eaten Date</label>
-                        <input className="eaten-date-text" type="date" name="log-date" id="eaten-date" defaultValue="2020-01-01"
+                        <input className="eaten-date-text" type="date" name="log-date" id="eaten-date" defaultValue="2020-01-15"
                          min="1980-01-01"/>
                     </div>
 

@@ -29,8 +29,8 @@
 }
 
 .add-eatery-btn a:active {
+    color: rgb(75, 71, 68);
     transition: 0.1s ease-out;
-    color: rgb(148, 228, 253);
 }
 
 .disclaimer {

@@ -14,18 +14,52 @@
     margin: 5% 2% 2% 2%;
 }
 
-.add-eatery-form-btn {
-    background-color: rgb(51, 48, 46);
-    font-family: 'Roboto', sans-serif;
-    cursor: pointer;
-    padding-top: 0.6%;
-}
-
 .add-eatery-back-btn {
     background-color: rgb(51, 48, 46);
-    margin-right: 3%;
+    border: 1px solid rgb(82, 171, 255);
+    border-radius: 4px;
+    margin-right: 5%;
+    padding: 1.3%;
+}
+
+.add-eatery-back-btn:hover {
+    transition: 0.2s ease-out;
+    background-color: rgb(66, 148, 224);
 }
 
 .add-eatery-back-btn a {
+    color: rgb(82, 171, 255);
     font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+}
+
+.add-eatery-back-btn a:hover {
+    color: rgb(240, 238, 233);
+    transition: 0.2s ease-out;
+}
+
+.add-eatery-back-btn a:focus {
+    color: rgb(69, 158, 241);
+    border-bottom: 2px solid;
+}
+
+.add-eatery-back-btn a:active {
+    color: rgb(75, 71, 68);
+}
+
+.add-eatery-form-btn {
+    color: rgb(75, 71, 68);
+    background-color: rgb(82, 171, 255);
+    border: 1px solid rgb(82, 171, 255);
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    padding: 1.3%;
+}
+
+.add-eatery-form-btn:hover {
+    color: rgb(240, 238, 233);
+    background-color: rgb(66, 148, 224);
+    transition: 0.2s ease-out;
 }

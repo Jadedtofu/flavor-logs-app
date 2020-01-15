@@ -17,18 +17,53 @@
 
 .edit-log-back-btn {
     background-color: rgb(51, 48, 46);
-    margin-right: 3%;
+    border: 1px solid rgb(133, 228, 109);
+    border-radius: 4px;
+    margin-right: 5%;
+    padding: 1.3%;
+}
+
+.edit-log-back-btn:hover {
+    transition: 0.2s ease-out;
+    background-color: rgb(101, 199, 76);
 }
 
 .edit-log-back-btn a {
+    color: rgb(133, 228, 109);
     font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+}
+
+.edit-log-back-btn a:hover {
+    color: rgb(240, 238, 233);
+    transition: 0.2s ease-out;
+}
+
+.edit-log-back-btn a:focus {
+    color: rgb(102, 202, 77);
+    border-bottom: 2px solid;
+}
+
+.edit-log-back-btn a:active {
+    color: rgb(75, 71, 68);
+    transition: 0.1s ease-out;
 }
 
 .edit-log-form-btn {
-    background-color: rgb(51, 48, 46);
+    color: rgb(75, 71, 68);
+    background-color: rgb(133, 228, 109);
+    border: 1px solid rgb(133, 228, 109);
+    border-radius: 4px;
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
-    padding-top: 0.6%;
+    font-size: 1em;
+    padding: 1.3%;
+}
+
+.edit-log-form-btn:hover {
+    color: rgb(240, 238, 233);
+    background-color: rgb(101, 199, 76);
+    transition: 0.2s ease-out;
 }
 
 .required-fields {

@@ -17,18 +17,52 @@
 
 .edit-eatery-back-btn {
     background-color: rgb(51, 48, 46);
-    margin-right: 3%;
+    border: 1px solid rgb(82, 171, 255);
+    border-radius: 4px;
+    margin-right: 5%;
+    padding: 1.3%;
+}
+
+.edit-eatery-back-btn:hover {
+    transition: 0.2s ease-out;
+    background-color: rgb(66, 148, 224);
 }
 
 .edit-eatery-back-btn a {
+    color: rgb(82, 171, 255);
     font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+}
+
+.edit-eatery-back-btn a:hover {
+    color: rgb(240, 238, 233);
+    transition: 0.2s ease-out;
+}
+
+.edit-eatery-back-btn a:focus {
+    color: rgb(69, 158, 241);
+    border-bottom: 2px solid;
+}
+
+.edit-eatery-back-btn a:active {
+    color: rgb(75, 71, 68);
 }
 
 .edit-eatery-form-btn {
-    background-color: rgb(51, 48, 46);
-    font-family: 'Roboto', sans-serif;
+    color: rgb(75, 71, 68);
+    background-color: rgb(82, 171, 255);
+    border: 1px solid rgb(82, 171, 255);
+    border-radius: 4px;
     cursor: pointer;
-    padding-top: 0.6%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    padding: 1.3%;
+}
+
+.edit-eatery-form-btn:hover {
+    color: rgb(240, 238, 233);
+    background-color: rgb(66, 148, 224);
+    transition: 0.2s ease-out;
 }
 
 .required-fields {

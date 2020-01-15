@@ -1,5 +1,6 @@
 .landing-sub-header {
     color: rgb(82, 171, 255);
+    font-size: 1.5em;
 }
 
 .title-header {
@@ -28,8 +29,8 @@
 }
 
 .view-logs-btn:hover {
-    transition: 0.2s ease-out;
     background-color: rgb(101, 199, 76);
+    transition: 0.2s ease-out;
 }
 
 .view-logs-btn a {
@@ -45,11 +46,20 @@
 }
 
 .view-logs-btn a:focus {
-    color: rgb(75, 71, 68);
+    color: rgb(48, 141, 25);
     border-bottom: 2px solid;
 }
 
 .view-logs-btn a:active {
-    color: rgb(253, 234, 148);
+    color: rgb(75, 71, 68);
     transition: 0.1s ease-out;
+}
+
+.my-logs-gif,
+.add-eatery-gif,
+.add-log-gif {
+    border: 2px solid rgb(224, 220, 216);
+    border-radius: 4%;
+    margin-top: 2%;
+    width: 85%;
 }
