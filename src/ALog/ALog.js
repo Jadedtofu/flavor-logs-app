@@ -58,13 +58,13 @@ class ALog extends Component {
 
                 <ul className='item-info'>
                     {!this.props.ordered ? null : 
-                    <li><span className="ordered-text">Ordered:</span> {ordered}</li>}
+                    <li className="ordered-info"><span className="ordered-text">Ordered:</span> {ordered}</li>}
                     <li className="rating"><span className="rating-text">Rating:</span> <Rating value={rating} /></li>
                     {!this.props.date ? null : 
                     <li className="last-date"><span className="last-date-text">Last Date Eaten:</span> {date}</li>}
                 </ul>
 
-                <blockquote>
+                <blockquote className="log-detail-notes">
                     {info}
                 </blockquote>
                 {!this.props.image ? null : 

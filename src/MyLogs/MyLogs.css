@@ -67,6 +67,7 @@
     }
 
     .add-log-btn {
+        margin-top: 8%;
         padding: 3%;
     }
 
@@ -81,6 +82,7 @@
     }
 
     .add-log-btn {
+        margin-top: 6%;
         padding: 2.3%;
     }
 
@@ -91,12 +93,14 @@
 }
 
 @media screen and (min-width: 601px) and (max-width: 768px) {
+
     .add-log-btn {
+        margin-top: 4%;
         padding: 1.5%;
     }
 
     .add-log-btn a {
-        font-size: 1.5em;
+        font-size: 1.6em;
     }
 
 }
