@@ -54,11 +54,11 @@ class Eatery extends Component {
 
                 <ul className="eatery-info">
                     {!this.props.phone ? null : 
-                    <li><span className="phone-text">Phone Number:</span> {phone}</li>}
+                    <li className="phone-number"><span className="phone-text">Phone Number:</span> {phone}</li>}
                     {!this.props.address ? null :
-                    <li><span className="address-text">Address:</span> {address}</li>}
+                    <li className="address"><span className="address-text">Address:</span> {address}</li>}
                     {!this.props.notes ? null : 
-                    <li><span className="notes-text">Additional Notes:</span> {notes}</li>}
+                    <li className="eatery-notes"><span className="notes-text">Additional Notes:</span> {notes}</li>}
                 </ul>
 
                 <div className="edit-delete-btns">

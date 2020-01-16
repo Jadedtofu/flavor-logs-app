@@ -13,7 +13,7 @@
 .logo a {
     color: rgb(133, 228, 109);
     font-family: 'Roboto', sans-serif;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 .logo a:hover {
@@ -34,7 +34,7 @@
 .my-eateries {
     font-size: 1.2em;
     font-weight: bold;
-    margin-top: 0.5%;
+    margin-top: 1%;
 }
 
 .my-logs .fa-file-alt {
@@ -118,7 +118,7 @@ ul {
     .my-logs,
     .my-eateries {
         font-size: 0.65em;
-        margin-top: 4.5%;
+        margin-top: 4.7%;
     }
 
     .my-logs a{
@@ -173,7 +173,7 @@ ul {
 
 @media screen and (min-width: 451px) and (max-width: 500px) {
     .logo a {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .my-logs,
@@ -226,6 +226,11 @@ ul {
 
 
 @media screen and (min-width: 601px) and (max-width: 768px) {
+    .my-logs,
+    .my-eateries {
+        margin-top: 1.4%;
+    }
+
     nav {
         padding: 1.4% 0%;
     }
