@@ -68,3 +68,16 @@
 .required-fields {
     font-family: 'Roboto', sans-serif;
 }
+
+@media screen and (min-width: 320px) and (max-width: 400px) {
+    .edit-eatery-text {
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 600px) {
+    .edit-eatery-text {
+        font-size: 2em;
+    }
+}
+
