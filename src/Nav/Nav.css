@@ -216,9 +216,14 @@ ul {
         font-size: 1.1em;
     }
 
+    nav.top li::after {
+        content: "";
+        padding-right: 24px;
+    }
+
     .my-logs,
     .my-eateries {
-        font-size: 1em;
+        font-size: 0.95em;
         margin-top: 1.5%;
     }
 
