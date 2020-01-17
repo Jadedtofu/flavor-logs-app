@@ -121,6 +121,11 @@ ul {
         margin-top: 4.7%;
     }
 
+    nav.top li::after {
+        content: "";
+        padding-right: 15px;
+    }
+
     .my-logs a{
         padding-right: 0%;
     }
@@ -139,6 +144,11 @@ ul {
     .my-eateries {
         font-size: 0.72em;
         margin-top: 4%;
+    }
+
+    nav.top li::after {
+        content: "";
+        padding-right: 18px;
     }
 
     .my-logs a{
@@ -162,6 +172,11 @@ ul {
         margin-top: 3%;
     }
 
+    nav.top li::after {
+        content: "";
+        padding-right: 20px;
+    }
+
     .my-logs a{
         padding-right: 2.5%;
     }
@@ -180,6 +195,11 @@ ul {
     .my-eateries {
         font-size: 0.9em;
         margin-top: 2.3%;
+    }
+    
+    nav.top li::after {
+        content: "";
+        padding-right: 22px;
     }
 
     .my-logs a{
