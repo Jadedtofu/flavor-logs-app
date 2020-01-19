@@ -68,7 +68,7 @@ class EditEatery extends Component {
             phone: e.target['eatery-phone'].value,
             address: e.target['eatery-address'].value,
             notes: e.target['eatery-notes'].value
-        }
+        };
 
         fetch(`${config.API_ENDPOINT}/eateries/${eatery_id}`, {
             method: 'PATCH',
@@ -77,12 +77,9 @@ class EditEatery extends Component {
             },
             body: JSON.stringify(eateryToUpdate)
         })
-        // .then(res => {
-        //     console.log(eateryToUpdate)
-        // })
         .then(res => {
             if(!res.ok) {
-                return res.json().then(e => Promise.reject(e))
+                return res.json().then(e => Promise.reject(e));
             }
         })
         .then(() => {
@@ -94,48 +91,42 @@ class EditEatery extends Component {
             ])
             .then(([eateriesRes, flavorLogsRes]) => {
                 if(!eateriesRes.ok) {
-                    return eateriesRes.json().then(e => Promise.reject(e))
+                    return eateriesRes.json().then(e => Promise.reject(e));
                 }
                     if(!flavorLogsRes.ok) {
-                        return flavorLogsRes.json().then(e => Promise.reject(e))
+                        return flavorLogsRes.json().then(e => Promise.reject(e));
                     }
                     return Promise.all([
                         eateriesRes.json(),
                         flavorLogsRes.json()
-                    ])
+                    ]);
             })
             .then(([eateries, flavorLogs]) => {
                 this.context.eateries = eateries;
                 this.context.flavorLogs = flavorLogs;
             })
             .then(() => {
-                this.props.history.push('/myEateries')
-            })
+                this.props.history.push('/myEateries');
+            });
         })
         .catch(error => {
-            console.error({error})
-        })
+            console.error({error});
+        });
     }
 
     render() {
         const { eateries=[] } = this.context;
-        // console.log(this.context.eateries);
         // need to update the values inside each input to be from the corresponding eatery id
         const eatery_id = this.props.match.params.eatery_id;
-        // console.log(eatery_id);
 
         let eateryToEdit = eateries.find(eatery => eatery.id.toString() === eatery_id.toString()); // this only works if I use .toString() or the id#
         // console.log(eateryToEdit); 
         
-        // let eateryId = null;
         let eateryName = '';
         let eateryPhone = '';
         let eateryAddress = '';
         let eateryNotes = '';
         for (let key in eateryToEdit) {
-            // if(key === 'id') {
-            //     eateryId = eateryToEdit[key];
-            // }
             if (key === 'name') {
                 eateryName = eateryToEdit[key];
             }
@@ -148,11 +139,6 @@ class EditEatery extends Component {
             if (key === 'notes') {
                 eateryNotes = eateryToEdit[key];
             }
-            // console.log(eateryId);
-            // console.log(eateryName);
-            // console.log(eateryPhone);
-            // console.log(eateryAddress);
-            // console.log(eateryNotes);
         }
 
         return (
@@ -191,7 +177,6 @@ class EditEatery extends Component {
                     </div>
                 </ShareForm>
 
-                {/* disabled={!this.state.formValid} */}
                 <section>
                     <p className="required-fields">* Required fields</p>
                 </section>

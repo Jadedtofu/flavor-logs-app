@@ -84,9 +84,8 @@ class EditLog extends Component {
 
     static contextType = ApiContext;
     
-    handleSubmit = e => {  // this is currently not working properly
+    handleSubmit = e => {  
         e.preventDefault();
-        // console.log('clicked')
         const flavorLog_id = this.props.match.params.flavorLog_id;
 
         const flavorLogToUpdate = {
@@ -107,17 +106,14 @@ class EditLog extends Component {
             },
             body: JSON.stringify(flavorLogToUpdate)
         })
-        // .then(res => {
-        //     console.log(flavorLogToUpdate);
-        // })
         .then(res => {
             if(!res.ok) {
-                return res.json().then(e => Promise.reject(e))
+                return res.json().then(e => Promise.reject(e));
             }
         })
         .then(() => {
             this.context.editLog(flavorLog_id)
-            // // update context with new updated Flavor Log:
+            // update context with new updated Flavor Log:
 
             Promise.all([
                 fetch(`${config.API_ENDPOINT}/eateries`),
@@ -125,23 +121,23 @@ class EditLog extends Component {
             ])
             .then(([eateriesRes, flavorLogsRes]) => {
                 if(!eateriesRes.ok) {
-                    return eateriesRes.json().then(e => Promise.reject(e))
+                    return eateriesRes.json().then(e => Promise.reject(e));
                 }
                     if(!flavorLogsRes.ok) {
-                        return flavorLogsRes.json().then(e => Promise.reject(e))
+                        return flavorLogsRes.json().then(e => Promise.reject(e));
                     }
                     return Promise.all([
                         eateriesRes.json(),
                         flavorLogsRes.json()
-                    ])
+                    ]);
             })
             .then(([eateries, flavorLogs]) => {
                 this.context.eateries = eateries;
                 this.context.flavorLogs = flavorLogs;
             })
             .then(() => {
-                this.props.history.push(`/myLogs`)
-            })
+                this.props.history.push(`/myLogs`);
+            });
         })
         .catch(error => {
             console.error({ error });
@@ -169,12 +165,9 @@ class EditLog extends Component {
         // getting eateryName added to flavorLogs
 
         const flavorLog_id = this.props.match.params.flavorLog_id;
-        // console.log(flavorLog_id);
 
         let flavorLogToEdit = flavorLogs.find(flavorLog => flavorLog.id.toString() === flavorLog_id.toString()); // this only works if I use .toString() or the id#
-        // console.log(flavorLogToEdit);
 
-        // let flavorLogId = null;
         let flavorLogTitle = '';
         let flavorLogInfo = '';
         let flavorLogOrdered = '';
@@ -185,9 +178,6 @@ class EditLog extends Component {
         let flavorLogEateryId = null;
         let flavorLogEatery = '';
         for (let key in flavorLogToEdit) {
-            // if (key === 'id') {
-            //     flavorLogId = flavorLogToEdit[key];
-            // }
             if (key === 'title') {
                 flavorLogTitle = flavorLogToEdit[key];
             }
@@ -215,11 +205,9 @@ class EditLog extends Component {
             if (key === 'eateryName') {
                 flavorLogEatery = flavorLogToEdit[key];
             }
-            // console.log(flavorLogDate);
         }
 
         let eateriesOptions = eateries.filter(eatery => eatery.id !== flavorLogEateryId);
-        // console.log(eateriesOptions);
 
         return(
             <main className="edit-log-page" role="main">
@@ -287,8 +275,6 @@ class EditLog extends Component {
                         <button type="submit" className="edit-log-form-btn" >Edit</button>
                     </div>
                 </ShareForm>
-
-                {/* disabled={!this.state.formValid} */}
                 <section>
                     <p className="required-fields">* Required fields</p>
                 </section>

@@ -32,7 +32,7 @@ class ALog extends Component {
         })
         .then(res => {
             if(!res.ok) {
-                return res.json().then(e => Promise.reject(e))
+                return res.json().then(e => Promise.reject(e));
             }
         })
         .then(() => {
@@ -40,7 +40,7 @@ class ALog extends Component {
             this.props.onDeleteLog(flavorLog_id)
         })
         .catch(error => {
-            console.error({ error })
+            console.error({ error });
         });
     }
 

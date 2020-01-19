@@ -27,10 +27,10 @@ class MyEateries extends Component {
         ])
         .then(([eateriesRes, flavorLogsRes]) => {
             if(!eateriesRes.ok) {
-                return eateriesRes.json().then(e => Promise.reject(e))
+                return eateriesRes.json().then(e => Promise.reject(e));
             }
                 if(!flavorLogsRes.ok) {
-                    return flavorLogsRes.json().then(e => Promise.reject(e))
+                    return flavorLogsRes.json().then(e => Promise.reject(e));
                 }
                 return Promise.all([
                     eateriesRes.json(),

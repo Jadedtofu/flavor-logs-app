@@ -118,14 +118,11 @@ class AddLog extends Component {
             },
             body: JSON.stringify(flavorLog)
         })
-        // .then(res => {
-        //     console.log(flavorlog)
-        // })
         .then(res => {
             if(!res.ok) {
                 return res.json().then(e => Promise.reject(e));
             }
-            return res.json()
+            return res.json();
         })
         .then(flavorLog => {
             this.context.addLog(flavorLog);
@@ -136,23 +133,23 @@ class AddLog extends Component {
             ])
             .then(([eateriesRes, flavorLogsRes]) => {
                 if(!eateriesRes.ok) {
-                    return eateriesRes.json().then(e => Promise.reject(e))
+                    return eateriesRes.json().then(e => Promise.reject(e));
                 }
                     if(!flavorLogsRes.ok) {
-                        return flavorLogsRes.json().then(e => Promise.reject(e))
+                        return flavorLogsRes.json().then(e => Promise.reject(e));
                     }
                     return Promise.all([
                         eateriesRes.json(),
                         flavorLogsRes.json()
-                    ])
+                    ]);
             })
             .then(([eateries, flavorLogs]) => {
                 this.context.eateries = eateries;
                 this.context.flavorLogs = flavorLogs;
             })
             .then(() => {
-                this.props.history.push(`/myLogs`)
-            })
+                this.props.history.push(`/myLogs`);
+            });
         })
         .catch(error => {
             console.error({ error });
@@ -161,7 +158,6 @@ class AddLog extends Component {
 
     render() {
         const { eateries=[] } = this.context;
-
 
         return(
             <main className="add-log-page" role="main">
@@ -233,7 +229,6 @@ class AddLog extends Component {
                     </div>
                 </ShareForm>
                 
-                {/* disabled={!this.state.formValid} */}
                 <section>
                     <p className="required-fields">* Required fields</p>
                 </section>

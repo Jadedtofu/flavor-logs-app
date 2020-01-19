@@ -5,7 +5,7 @@ class Footer extends Component {
     render() {
         return (
             <footer>
-                &copy; <span className="app-footer">Flavor Logs</span> 2019
+                &copy; <span className="app-footer">Flavor Logs</span> 2020
             </footer>
         );
     }

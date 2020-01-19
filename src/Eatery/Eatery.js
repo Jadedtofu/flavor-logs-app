@@ -31,7 +31,7 @@ class Eatery extends Component {
         })
         .then(res => {
             if(!res.ok) {
-                return res.json().then(e => Promise.reject(e))
+                return res.json().then(e => Promise.reject(e));
             }
         })
         .then(() => {
@@ -39,7 +39,7 @@ class Eatery extends Component {
             this.props.onDeleteEatery(eatery_id)
         })
         .catch(error => {
-            console.error({ error })
+            console.error({ error });
         });
     }
 
