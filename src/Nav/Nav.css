@@ -101,11 +101,6 @@ nav.top li {
     width: 180px;
 }
 
-/* nav.top li::after {
-    content: "";
-    padding-right: 30px;
-} */
-
 ul {
     list-style: none;
     margin: 0%;
